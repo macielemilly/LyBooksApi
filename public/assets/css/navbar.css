@@ -1,0 +1,62 @@
+.navs{
+    background-color: #D09953;
+}
+
+.side{
+   background-color: #F8E5CE;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  h1{
+    font-weight: 700;
+    font-size: 40px;
+  }
+
+  .topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topo button{
+    background-color: #D09953;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .editar{
+    background-color: #D09953;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 0px 5px;
+  }
+
+  .deletar{
+    background-color: #D09953;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 0px 2px;
+  }
