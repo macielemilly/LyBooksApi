@@ -133,6 +133,8 @@
 </aside>
 
 
+
+
 <!-- Main modal -->
 <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 flex justify-center items-center">
     <!-- Overlay background (escurecido apenas ao redor do modal) -->
@@ -195,7 +197,7 @@
                 {{$editora->nome}}
                 </td>
                 <td id='botões' class="px-6 py-4">
-                <a href="{{ route('editoras.edit', ['editor' => $editora->id]) }}"><button class="editar" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">Editar</button></a>
+                <a href="{{ route('editoras.edit', ['editor' => $editora->id]) }}"><button class="editar" >Editar</button></a>
                 <a href="{{ route('editoras.show', ['editor' => $editora->id]) }}"><button class="deletar">Mostrar</button></a>
                 </td>
 
