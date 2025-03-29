@@ -55,17 +55,22 @@ class EditorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Editor $editor)
     {
-        //
+        return view('editor_edit', ['editoras' => $editor]);
     }
-
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updated = Editor::where('id', $id)->update($request->except(['_token','_method']));
+
+        if($updated){
+            return redirect()->route('editoras.index')->with('message','Atualizado com sucesso');
+        }
+
+        return redirect()->route('editoras.index')->with('message','Erro ao atualizar');
     }
 
     /**
