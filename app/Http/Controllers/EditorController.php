@@ -33,7 +33,15 @@ class EditorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $created = $this->editor->create([
+            'nome' => $request->input('nome'), 
+        ]);
+
+        if($created){
+           return redirect()->route('editoras.index')->with('message', 'Editora "' . $created->nome  . '" criado com sucesso');
+        }
+
+        return redirect()->route('editoras.index')->with('message','Erro ao criar');
     }
 
     /**
