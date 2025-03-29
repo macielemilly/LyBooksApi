@@ -47,9 +47,9 @@ class EditorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Editor $editor)
     {
-        //
+        return view('editor_show',['editoras' => $editor]);
     }
 
     /**
@@ -78,6 +78,8 @@ class EditorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->editor->where('id',$id)->delete();
+
+       return redirect()->route('editoras.index')->with('message','Deletado com sucesso');
     }
 }
