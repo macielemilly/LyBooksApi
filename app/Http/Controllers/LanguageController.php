@@ -55,7 +55,7 @@ class LanguageController extends Controller
      */
     public function edit(Language $language)
     {
-        return view('language_edit', ['languages' => $language]);
+        return view('Language/language_edit', ['languages' => $language]);
     }
 
     /**

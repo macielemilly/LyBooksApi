@@ -22,10 +22,10 @@ Route::delete('/editoras/{editor}', [EditorController::class,'destroy'])->name('
 Route::get('/languages', [LanguageController::class,'index'])->name('languages.index');
 Route::get('/languages/create', [LanguageController::class,'create'])->name('languages.create');
 Route::post('/languagens', [LanguageController::class,'store'])->name('languages.store');
-Route::get('/languages{editor}', [LanguageController::class,'show'])->name('languages.show');
-Route::get('/languages/{editor}/edit', [languageController::class,'edit'])->name('languages.edit');
-Route::put('/languages/{editor}', [languageController::class,'update'])->name('languages.update');
-Route::delete('/languages/{editor}', [languageController::class,'destroy'])->name('languages.destroy');
+Route::get('/languages{language}', [LanguageController::class,'show'])->name('languages.show');
+Route::get('/languages/{language}/edit', [languageController::class,'edit'])->name('languages.edit');
+Route::put('/languages/{language}', [languageController::class,'update'])->name('languages.update');
+Route::delete('/languages/{language}', [languageController::class,'destroy'])->name('languages.destroy');
 
 Route::get('/', function () {
     return view('welcome');
