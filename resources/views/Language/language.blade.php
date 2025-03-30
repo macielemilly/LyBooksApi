@@ -145,7 +145,11 @@
         <!-- Modal header -->
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
             <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+<<<<<<< HEAD
                 Adicionar Idioma
+=======
+                Criar Editora
+>>>>>>> e9a81e06cd9e2efb1765ca426a4ae7e01415a4cf
             </h3>
             <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -159,8 +163,12 @@
         <form class="space-y-4" action="{{ route('languages.store')}}" method="post">
         @csrf
                 <div>
+<<<<<<< HEAD
                     <label for="idioma" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Idiomas <span style="color:red;">*</span></label>
                     <input name="idioma" id="idioma" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="idioma" value='{{old("idioma")}}' required />
+=======
+                   
+>>>>>>> e9a81e06cd9e2efb1765ca426a4ae7e01415a4cf
                 </div>
                 <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Criar</button>
             </form>
@@ -173,7 +181,11 @@
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
       
    <div class="topo">
+<<<<<<< HEAD
    <h1>Idiomas</h1>
+=======
+  
+>>>>>>> e9a81e06cd9e2efb1765ca426a4ae7e01415a4cf
    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Adicionar</button>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -194,7 +206,11 @@
                 {{$language->id}}
                 </td>
                 <td class="px-6 py-4">
+<<<<<<< HEAD
                 {{$language->idioma}}
+=======
+                {{$language->nome}}
+>>>>>>> e9a81e06cd9e2efb1765ca426a4ae7e01415a4cf
                 </td>
                 <td id='botões' class="px-6 py-4">
                 <a href="{{ route('languages.edit', ['editor' => $language->id]) }}"><button class="editar" >Editar</button></a>
