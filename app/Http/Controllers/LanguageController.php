@@ -47,7 +47,7 @@ class LanguageController extends Controller
      */
     public function show(Language $language)
     {
-        return view('language_show', ['languages' => $language]);
+        return view('Language/language_show', ['languages' => $language]);
     }
 
     /**
