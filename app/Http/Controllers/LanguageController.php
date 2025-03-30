@@ -15,7 +15,7 @@ class LanguageController extends Controller
     public function index()
     {
         $languages = $this->language->all();
-        return view('language', ['languages' => $languages]);
+        return view('Language/language', ['languages' => $languages]);
     }
 
     /**
@@ -32,7 +32,7 @@ class LanguageController extends Controller
     public function store(Request $request)
     {
         $created = $this->language->create([
-            'name' => $request->input('name'), 
+            'idioma' => $request->input('idioma'), 
         ]);
 
         if($created){
