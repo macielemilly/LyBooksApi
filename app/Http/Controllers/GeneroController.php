@@ -31,7 +31,15 @@ class GeneroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $created = $this->genero->create([
+            'nome' => $request->input('nome'), 
+        ]);
+
+        if($created){
+           return redirect()->route('generos.index')->with('message', 'Gênero "' . $created->nome  . '" criado com sucesso');
+        }
+
+        return redirect()->route('generos.index')->with('message','Erro ao criar');
     }
 
     /**
