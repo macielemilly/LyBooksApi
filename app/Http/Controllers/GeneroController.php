@@ -45,9 +45,9 @@ class GeneroController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Genero $genero)
     {
-        //
+        return view('Gêneros/genero_show',['generos' => $genero]);
     }
 
     /**
@@ -77,6 +77,8 @@ class GeneroController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->genero->where('id',$id)->delete();
+
+        return redirect()->route('generos.index')->with('message','Deletado com sucesso');
     }
 }
