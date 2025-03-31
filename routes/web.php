@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
-//->middleware(['auth', 'verified'])
-
 //Editora
 Route::get('/editoras', [EditorController::class,'index'])->name('editoras.index');
 Route::get('/editoras/create', [EditorController::class,'create'])->name('editoras.create');
