@@ -1,17 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Genero;
 use Illuminate\Http\Request;
 
 class GeneroController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public readonly Genero $genero;
+
+    public function __construct(){
+        $this->genero = new Genero();
+    }
+
     public function index()
     {
-        //
+        $generos = $this->genero->all();
+        return view('Gêneros/genero', ['generos' => $generos]);
     }
 
     /**
