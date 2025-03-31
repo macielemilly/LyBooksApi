@@ -53,9 +53,9 @@ class GeneroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Genero $genero)
     {
-        //
+        return view('Gêneros/genero_edit', ['generos' => $genero]);
     }
 
     /**
@@ -63,7 +63,13 @@ class GeneroController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updated = Genero::where('id', $id)->update($request->except(['_token','_method']));
+
+        if($updated){
+            return redirect()->route('generos.index')->with('message','Atualizado com sucesso');
+        }
+
+        return redirect()->route('generos.index')->with('message','Erro ao atualizar');
     }
 
     /**
