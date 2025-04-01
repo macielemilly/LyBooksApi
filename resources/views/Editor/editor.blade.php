@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idioma</title>
+    <title>Editoras</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
 </head>
 <body>
-    
-@extends('nav')
 
+@extends('nav')    
 
 <!-- Main modal -->
 <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 flex justify-center items-center">
@@ -23,9 +22,7 @@
         <!-- Modal header -->
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
             <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-
-                Adicionar Idioma
-
+                Criar Editora
             </h3>
             <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -36,13 +33,11 @@
         </div>
         <!-- Modal body -->
         <div class="p-4 md:p-5">
-        <form class="space-y-4" action="{{ route('languages.store')}}" method="post">
+        <form class="space-y-4" action="{{ route('editoras.store')}}" method="post">
         @csrf
                 <div>
-
-                    <label for="idioma" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Idiomas <span style="color:red;">*</span></label>
-                    <input name="idioma" id="idioma" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="idioma" value='{{old("idioma")}}' required />
-
+                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome Editora <span style="color:red;">*</span></label>
+                    <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="nome" value='{{old("nome")}}' required />
                 </div>
                 <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Criar</button>
             </form>
@@ -55,9 +50,7 @@
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
       
    <div class="topo">
-
-   <h1>Idiomas</h1>
-
+   <h1>Editoras!</h1>
    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Adicionar</button>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -72,17 +65,17 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($languages as $language)
+        @foreach($editoras as $editora)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td class="px-6 py-4">
-                {{$language->id}}
+                {{$editora->id}}
                 </td>
                 <td class="px-6 py-4">
-                {{$language->idioma}}
+                {{$editora->nome}}
                 </td>
                 <td id='botões' class="px-6 py-4">
-                <a href="{{ route('languages.edit', ['language' => $language->id]) }}"><button class="editar" >Editar</button></a>
-                <a href="{{ route('languages.show', ['language' => $language->id]) }}"><button class="deletar">Mostrar</button></a>
+                <a href="{{ route('editoras.edit', ['editor' => $editora->id]) }}"><button class="editar" >Editar</button></a>
+                <a href="{{ route('editoras.show', ['editor' => $editora->id]) }}"><button class="deletar">Mostrar</button></a>
                 </td>
 
             </tr>

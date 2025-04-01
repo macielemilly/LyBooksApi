@@ -17,7 +17,7 @@ class EditorController extends Controller
     {
 
         $editoras = $this->editor->all();
-        return view('editor', ['editoras' => $editoras]);
+        return view('Editor/editor', ['editoras' => $editoras]);
     }
 
     /**
@@ -49,7 +49,7 @@ class EditorController extends Controller
      */
     public function show(Editor $editor)
     {
-        return view('editor_show',['editoras' => $editor]);
+        return view('Editor/editor_show',['editoras' => $editor]);
     }
 
     /**
@@ -57,7 +57,7 @@ class EditorController extends Controller
      */
     public function edit(Editor $editor)
     {
-        return view('editor_edit', ['editoras' => $editor]);
+        return view('Editor/editor_edit', ['editoras' => $editor]);
     }
     /**
      * Update the specified resource in storage.

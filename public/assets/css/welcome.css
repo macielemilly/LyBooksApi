@@ -1,0 +1,29 @@
+
+.nav_welcome a{
+    margin: 10px 15px;
+}
+
+.nav_welcome {
+    display: flex;              
+    justify-content: space-between; 
+    align-items: center;        
+    background-color: #D09953;    
+    color: white;               
+}
+
+
+.itens_nav {
+    flex-grow: 1;               
+    display: flex;              
+  
+}
+
+.itens_nav ul {
+    display: flex;             
+                
+}
+
+.itens_nav li {
+    margin: 0 15px;             
+
+}
