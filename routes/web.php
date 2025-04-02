@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/dashboard', [HomeController::class,'index'])->name('dashboard');
 
 //Editora
 Route::get('/editoras', [EditorController::class,'index'])->name('editoras.index');
