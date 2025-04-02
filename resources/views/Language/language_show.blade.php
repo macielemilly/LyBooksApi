@@ -12,6 +12,7 @@
     
 @extends('nav')
 
+
 <!-- Main modal -->
 <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 flex justify-center items-center">
     <!-- Overlay background (escurecido apenas ao redor do modal) -->
