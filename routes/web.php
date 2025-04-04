@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EditorController;
@@ -39,6 +40,14 @@ Route::get('/generos{genero}', [GeneroController::class,'show'])->name('generos.
 Route::get('/generos/{genero}/edit', [GeneroController::class,'edit'])->name('generos.edit');
 Route::put('/generos/{genero}', [GeneroController::class,'update'])->name('generos.update');
 Route::delete('/generos/{genero}', [GeneroController::class,'destroy'])->name('generos.destroy');
+
+Route::get('/authors', [AuthorController::class,'index'])->name('authors.index');
+Route::get('/authors/create', [AuthorController::class,'create'])->name('authors.create');
+Route::post('/authors', [AuthorController::class,'store'])->name('authors.store');
+Route::get('/authors{author}', [AuthorController::class,'show'])->name('authors.show');
+Route::get('/authors/{author}/edit', [AuthorController::class,'edit'])->name('authors.edit');
+Route::put('/authors/{author}', [AuthorController::class,'update'])->name('authors.update');
+Route::delete('/authors/{author}', [AuthorController::class,'destroy'])->name('authors.destroy');
 
 
 Route::get('/', function () {
