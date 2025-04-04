@@ -46,7 +46,7 @@
             <img class="rounded-t-lg" src="{{ asset('assets/images/editora.png') }}" alt="" />
             </div>
         </a>
-        <p class="mb-3 font-normal text-gray-700">Quantidade: 0</p>
+        <p class="mb-3 font-normal text-gray-700">Quantidade: {{ $total_editoras }}</p>
         <div class="botao_home">
         <a href="{{route('editoras.index')}}">
             <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white  rounded-lg">Conferir
@@ -96,7 +96,7 @@
             <img class="rounded-t-lg" src="{{ asset('assets/images/idiomas.png') }}" alt="" />
             </div>
         </a>
-        <p class="mb-3 font-normal text-gray-700">Quantidade: 0</p>
+        <p class="mb-3 font-normal text-gray-700">Quantidade: {{ $total_languages }}</p>
         <div class="botao_home">
         <a href="{{route('languages.index')}}">
             <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white  rounded-lg">Conferir
@@ -121,7 +121,7 @@
             <img class="rounded-t-lg" src="{{ asset('assets/images/fantasma.png') }}" alt="" />
             </div>
         </a>
-        <p class="mb-3 font-normal text-gray-700">Quantidade: 0</p>
+        <p class="mb-3 font-normal text-gray-700">Quantidade: {{ $total_generos }}</p>
         <div class="botao_home">
         <a href="{{route('generos.index')}}">
             <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white  rounded-lg">Conferir
