@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset('assets/css/welcome.css') }}">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.min.js"></script>
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -31,6 +33,7 @@
                         <li>Editoras</li>
                         <li>Autores</li>
                         <li>Gêneros</li>
+                        <li>Populares</li>
                     </ul>
                     </div>
                     @auth
@@ -70,7 +73,17 @@
         </div>
 
         @if (Route::has('login'))
-            <div class="h-14.5 hidden lg:block"></div>
+            <!--<div class="h-14.5 hidden lg:block"></div>-->
         @endif
+
+        
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item h-100 active" style="background-image: url('{{ asset('assets/images/image.svg') }}');  background-repeat: no-repeat; background-position: center;">
+  </div>
+</div>
+
+</div>
     </body>
 </html>

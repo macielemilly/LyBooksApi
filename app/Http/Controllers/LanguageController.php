@@ -36,10 +36,10 @@ class LanguageController extends Controller
         ]);
 
         if($created){
-            return redirect()->route('languages.index')->with('message', 'Language "' . $created->name . '" created successfully');
+            return redirect()->route('languages.index')->with('message', 'Idioma "' . $created->idioma  . '" criado com sucesso');
         }
 
-        return redirect()->route('languages.index')->with('message', 'Error creating language');
+        return redirect()->route('languages.index')->with('message','Erro ao criar Idioma');
     }
 
     /**
@@ -66,7 +66,7 @@ class LanguageController extends Controller
         $updated = Language::where('id', $id)->update($request->except(['_token', '_method']));
 
         if($updated){
-            return redirect()->route('languages.index')->with('message', 'Updated successfully');
+            return redirect()->route('languages.index')->with('message', 'Atualizado com sucesso');
         }
 
         return redirect()->route('languages.index')->with('message', 'Error updating language');
@@ -79,7 +79,7 @@ class LanguageController extends Controller
     {
         $this->language->where('id', $id)->delete();
 
-        return redirect()->route('languages.index')->with('message', 'Deleted successfully');
+        return redirect()->route('languages.index')->with('message', 'Deletado com sucesso');
     }
 }
 

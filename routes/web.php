@@ -5,9 +5,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\GeneroController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', [HomeController::class,'index'])->name('home');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', [HomeController::class,'index'])->name('dashboard');
 
 //Editora
 Route::get('/editoras', [EditorController::class,'index'])->name('editoras.index');
