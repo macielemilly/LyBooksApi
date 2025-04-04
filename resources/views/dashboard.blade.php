@@ -12,7 +12,7 @@
 <body>
 @extends('nav')
 <div class="cartoes sm:ml-64">
-   <div class="p-3 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div class="p-3 border-2 border-gray-200 border-dashed rounded-lg mt-20">
    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
