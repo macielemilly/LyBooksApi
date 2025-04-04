@@ -20,13 +20,13 @@
     <div class="absolute inset-0 bg-black opacity-50"></div>
 
     <!-- Modal content -->
-    <div class="relative p-4 w-full max-w-md max-h-full z-10 bg-white rounded-lg shadow-sm dark:bg-gray-700">
+    <div class="relative p-4 w-full max-w-md max-h-full z-10 bg-white rounded-lg shadow-sm">
         <!-- Modal header -->
-        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+            <h3 class="text-xl font-semibold text-gray-900">
                 Criar Editora
             </h3>
-            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
+            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="authentication-modal">
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                 </svg>
@@ -38,10 +38,10 @@
         <form class="space-y-4" action="{{ route('editoras.store')}}" method="post">
         @csrf
                 <div>
-                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome Editora <span style="color:red;">*</span></label>
-                    <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="nome" value='{{old("nome")}}' required />
+                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome Editora <span style="color:red;">*</span></label>
+                    <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="nome" value='{{old("nome")}}' required />
                 </div>
-                <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Criar</button>
+                <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
             </form>
         </div>
     </div>
@@ -49,7 +49,7 @@
 
 
 <div class="p-4 sm:ml-64">
-   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
       
 
 
@@ -57,7 +57,7 @@
 
    <div class="topo">
    <h1>Editoras!</h1>
-   <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Adicionar</button>
+   <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">Adicionar</button>
     </div>
 
     @if(session()->has('message'))
@@ -74,8 +74,8 @@
 @endif
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
                 <th scope="col" class="px-6 py-3"style="background-color:#D09953; color:white;">Id</th>
                 <th scope="col" class="px-6 py-3"style="background-color:#D09953; color:white;">Nome</th>
@@ -86,7 +86,7 @@
         </thead>
         <tbody>
         @foreach($editoras as $editora)
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <tr class="bg-white border-b hover:bg-gray-50">
                 <td class="px-6 py-4">
                 {{$editora->id}}
                 </td>
