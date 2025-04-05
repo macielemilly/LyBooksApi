@@ -15,13 +15,13 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [HomeController::class,'index'])->name('dashboard');
 
 //Editora
-Route::get('/editoras', [EditorController::class,'index'])->name('editoras.index');
-Route::get('/editoras/create', [EditorController::class,'create'])->name('editoras.create');
-Route::post('/editoras', [EditorController::class,'store'])->name('editoras.store');
-Route::get('/editoras{editor}', [EditorController::class,'show'])->name('editoras.show');
-Route::get('/editoras/{editor}/edit', [EditorController::class,'edit'])->name('editoras.edit');
-Route::put('/editoras/{editor}', [EditorController::class,'update'])->name('editoras.update');
-Route::delete('/editoras/{editor}', [EditorController::class,'destroy'])->name('editoras.destroy');
+Route::get('/editoras', [EditorController::class,'index'])->name('editoras.index')->middleware(['auth', 'verified']);
+Route::get('/editoras/create', [EditorController::class,'create'])->name('editoras.create')->middleware(['auth', 'verified']);
+Route::post('/editoras', [EditorController::class,'store'])->name('editoras.store')->middleware(['auth', 'verified']);
+Route::get('/editoras{editor}', [EditorController::class,'show'])->name('editoras.show')->middleware(['auth', 'verified']);
+Route::get('/editoras/{editor}/edit', [EditorController::class,'edit'])->name('editoras.edit')->middleware(['auth', 'verified'])->middleware(['auth', 'verified']);
+Route::put('/editoras/{editor}', [EditorController::class,'update'])->name('editoras.update')->middleware(['auth', 'verified']);
+Route::delete('/editoras/{editor}', [EditorController::class,'destroy'])->name('editoras.destroy')->middleware(['auth', 'verified']);
 
 //Linguagens
 Route::get('/languages', [LanguageController::class,'index'])->name('languages.index');
