@@ -51,10 +51,6 @@
 <div class="p-4 sm:ml-64">
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
       
-
-
-   <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-5 border-2 border-gray-200 border-dashed rounded-lg">
-   <div class=" cartao relative overflow-x-auto shadow-md sm:rounded-lg">
    <div class="topo">
    <h1>Editoras!</h1>
    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">Adicionar</button>
@@ -73,40 +69,28 @@
 </div>
 @endif
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-            <tr>
-                <th scope="col" class="px-6 py-3"style="background-color:#D09953; color:white;">Id</th>
-                <th scope="col" class="px-6 py-3"style="background-color:#D09953; color:white;">Nome</th>
-                <th scope="col" class="px-6 py-3" style="background-color:#D09953; color:white;" id='ação'>Ações</th>
+   
+    @foreach($editoras as $editora)
+        <div style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg mt-5">
+            <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
+                <div class="p-5">
+                    <a href="#">
+                        <div class="itens_cartoes">
+                            <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{$editora->nome}}</h5>
+                        </div>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">ID: {{$editora->id}}</p>
+                    <div class="botao_tab">
+                    <a href="{{ route('editoras.edit', ['editor' => $editora->id]) }}"><button class="editar" >Editar</button></a>
+                    <a href="{{ route('editoras.show', ['editor' => $editora->id]) }}"><button class="deletar">Mostrar</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+</div>
+   
 
-                
-            </tr>
-        </thead>
-        <tbody>
-        @foreach($editoras as $editora)
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <td class="px-6 py-4">
-                {{$editora->id}}
-                </td>
-                <td class="px-6 py-4">
-                {{$editora->nome}}
-                </td>
-                <td id='botões' class="px-6 py-4">
-                <a href="{{ route('editoras.edit', ['editor' => $editora->id]) }}"><button class="editar" >Editar</button></a>
-                <a href="{{ route('editoras.show', ['editor' => $editora->id]) }}"><button class="deletar">Mostrar</button></a>
-                </td>
-
-            </tr>
-            
-            @endforeach
-        </tbody>
-    </table>
-   </div>
-</div>
-</div>
-</div>
 
 
 
