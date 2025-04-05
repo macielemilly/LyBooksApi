@@ -33,13 +33,13 @@ Route::put('/languages/{language}', [languageController::class,'update'])->name(
 Route::delete('/languages/{language}', [languageController::class,'destroy'])->name('languages.destroy')->middleware(['auth', 'verified']);
 
 //Gêneros
-Route::get('/generos', [GeneroController::class,'index'])->name('generos.index');
-Route::get('/generos/create', [GeneroController::class,'create'])->name('generos.create');
-Route::post('/generos', [GeneroController::class,'store'])->name('generos.store');
-Route::get('/generos{genero}', [GeneroController::class,'show'])->name('generos.show');
-Route::get('/generos/{genero}/edit', [GeneroController::class,'edit'])->name('generos.edit');
-Route::put('/generos/{genero}', [GeneroController::class,'update'])->name('generos.update');
-Route::delete('/generos/{genero}', [GeneroController::class,'destroy'])->name('generos.destroy');
+Route::get('/generos', [GeneroController::class,'index'])->name('generos.index')->middleware(['auth', 'verified']);
+Route::get('/generos/create', [GeneroController::class,'create'])->name('generos.create')->middleware(['auth', 'verified']);
+Route::post('/generos', [GeneroController::class,'store'])->name('generos.store')->middleware(['auth', 'verified']);
+Route::get('/generos{genero}', [GeneroController::class,'show'])->name('generos.show')->middleware(['auth', 'verified']);
+Route::get('/generos/{genero}/edit', [GeneroController::class,'edit'])->name('generos.edit')->middleware(['auth', 'verified']);
+Route::put('/generos/{genero}', [GeneroController::class,'update'])->name('generos.update')->middleware(['auth', 'verified']);
+Route::delete('/generos/{genero}', [GeneroController::class,'destroy'])->name('generos.destroy')->middleware(['auth', 'verified']);
 
 Route::get('/authors', [AuthorController::class,'index'])->name('authors.index');
 Route::get('/authors/create', [AuthorController::class,'create'])->name('authors.create');
