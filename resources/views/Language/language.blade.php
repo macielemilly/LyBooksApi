@@ -53,8 +53,7 @@
 
 <div class="p-4 sm:ml-64">
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
-   <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-5 border-2 border-gray-200 border-dashed rounded-lg">
-   <div class=" cartao relative overflow-x-auto shadow-md sm:rounded-lg">
+  
    <div class="topo">
 
    <h1>Idiomas</h1>
@@ -76,37 +75,25 @@
 @endif
 
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-            <tr>
-                <th scope="col" class="px-6 py-3"style="background-color:#D09953; color:white;">Id</th>
-                <th scope="col" class="px-6 py-3"style="background-color:#D09953; color:white;">Nome</th>
-                <th scope="col" class="px-6 py-3" style="background-color:#D09953; color:white;" id='ação'>Ações</th>
 
-                
-            </tr>
-        </thead>
-        <tbody>
-        @foreach($languages as $language)
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <td class="px-6 py-4">
-                {{$language->id}}
-                </td>
-                <td class="px-6 py-4">
-                {{$language->idioma}}
-                </td>
-                <td id='botões' class="px-6 py-4">
-                <a href="{{ route('languages.edit', ['language' => $language->id]) }}"><button class="editar" >Editar</button></a>
-                <a href="{{ route('languages.show', ['language' => $language->id]) }}"><button class="deletar">Mostrar</button></a>
-                </td>
-
-            </tr>
-            
-            @endforeach
-        </tbody>
-    </table>
-   </div>
+@foreach($languages as $language)
+        <div style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg mt-5">
+            <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
+                <div class="p-5">
+                    <a href="#">
+                        <div class="itens_cartoes">
+                            <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{$language->idioma}}</h5>
+                        </div>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">ID: {{$language->id}}</p>
+                    <div class="botao_tab">
+                    <a href="{{ route('languages.edit', ['language' => $language->id]) }}"><button class="editar" >Editar</button></a>
+                    <a href="{{ route('languages.show', ['language' => $language->id]) }}"><button class="deletar">Mostrar</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 </div>
 
 
