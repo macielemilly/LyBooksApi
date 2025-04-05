@@ -67,10 +67,11 @@ table {
   }
 
   .drop{
-    background-color: #a47864;
-    border: transparent;
+    background-color: transparent;
+    border: #F5F2E7;
     color: white;
     border-radius: 20px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.267);
   }
   
   .lybooks {

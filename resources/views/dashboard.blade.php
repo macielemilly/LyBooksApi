@@ -12,7 +12,7 @@
 <body>
 @extends('nav')
 <div class="cartoes sm:ml-64">
-   <div class="p-3 border-2 border-gray-200 border-dashed rounded-lg mt-20">
+   <div  style="background-color:#D09953;" class="p-3 border-2 border-gray-600 border-dashed rounded-lg mt-20">
    <div class=" cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -37,7 +37,7 @@
 </div>
 
 <div class="cartoes sm:ml-64">
-   <div class="p-3 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div style="background-color:#D09953;"  class="p-3 border-2 border-gray-600 border-dashed rounded-lg mt-14">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -62,7 +62,7 @@
 </div>
 
 <div class="cartoes sm:ml-64">
-   <div class="p-3 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div style="background-color:#D09953;"  class="p-3 border-2 border-gray-600 border-dashed rounded-lg mt-14">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -87,7 +87,7 @@
 </div>
 
 <div class="cartoes sm:ml-64">
-   <div class="p-3 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div style="background-color:#D09953;"  class="p-3 border-2 border-gray-600 border-dashed rounded-lg mt-14">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -112,7 +112,7 @@
 </div>
 
 <div class="cartoes sm:ml-64">
-   <div class="p-3 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div style="background-color:#D09953;"  class="p-3 border-2 border-gray-600 border-dashed rounded-lg mt-14">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -137,7 +137,7 @@
 </div>
 
 <div class="cartoes sm:ml-64">
-   <div class="p-3 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div style="background-color:#D09953;"  class="p-3 border-2 border-gray-600 border-dashed rounded-lg mt-14">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
