@@ -31,7 +31,7 @@
                           value="{{$languages->idioma}}" type="text" id="idioma" name="idioma" placeholder="Nome"/>
                           <input type="hidden" name="_method" value="PUT">
                     </div>
-                    <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Editar
+                    <button style="background-color:#D09953;" type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Editar
                     </button>
                 </form>
         </div>
