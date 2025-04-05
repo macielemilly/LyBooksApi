@@ -48,6 +48,8 @@
 
 <div class="p-4 sm:ml-64">
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-5 border-2 border-gray-200 border-dashed rounded-lg">
+   <div class=" cartao relative overflow-x-auto shadow-md sm:rounded-lg">
    <div class="topo">
    <h1>Gêneros!</h1>
    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">Adicionar</button>
@@ -65,7 +67,6 @@
   </span>
 </div>
 @endif
-
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
@@ -99,6 +100,7 @@
     </table>
     </div>
 </div>
+
 
 <script>
         //Modal
