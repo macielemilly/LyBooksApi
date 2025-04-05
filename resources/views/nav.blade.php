@@ -58,7 +58,7 @@
          </li>
          <li>
             <a href="{{route('editoras.index')}}" class="links_nav flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
-            <img src="{{ asset('assets/images/nav_editor.png') }}" alt="">
+            <img src="{{ asset('assets/images/nav_editoras.png') }}" alt="">
                <span class="flex-1 ms-3 whitespace-nowrap">Editoras</span>
             </a>
          </li>
@@ -76,7 +76,7 @@
          </li>
          <li>
             <a href="{{route('generos.index')}}" class="links_nav flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 group">
-            <img src="{{ asset('assets/images/teatro.png') }}" alt="">
+            <img src="{{ asset('assets/images/nav_teatro.png') }}" alt="">
                <span class="flex-1 ms-3 whitespace-nowrap">Gêneros</span>
             </a>
          </li>
