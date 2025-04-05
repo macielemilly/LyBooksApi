@@ -40,14 +40,14 @@ table {
   }
 
   .topo button{
-    background-color: #a47864;
+    background-color: #D09953;
     width: 120px;
     height: 40px;
     border-radius: 10px;
   }
 
   .editar{
-    background-color: #a47864;
+    background-color: #D09953;
     color: white;
     border: none;
     border-radius: 10px;
@@ -57,7 +57,7 @@ table {
   }
 
   .deletar{
-    background-color: #8d6857;
+    background-color: #cfaa79;
     color: white;
     border: none;
     border-radius: 10px;
