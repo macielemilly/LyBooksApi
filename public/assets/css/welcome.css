@@ -1,4 +1,9 @@
-
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F8E5CE;
+}
 .nav_welcome a{
     margin: 10px 15px;
 }
@@ -31,4 +36,30 @@
 .itens_nav li {
     margin: 0 15px;             
 
+}
+
+
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d09a53d5;
+    margin-top: 10px;
+    height: 400px;
+    flex-direction: column;
+}
+
+.inicio h1{
+    font-size: 80px;
+    color: #F8E5CE;
+    font-weight: 800;
+    
+
+}
+
+.wel_cartoes{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 40px 40px;
 }

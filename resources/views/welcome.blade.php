@@ -78,11 +78,66 @@
 
         
 
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-interval="3000">
-  <div class="carousel-inner">
-    <div class="carousel-item h-100 active" style="background-image: url('{{ asset('assets/images/image.svg') }}');  background-repeat: no-repeat; background-position: center;">
-  </div>
+        <div class="inicio">
+            <div>
+                <h1>Organize seus livros</h1>
+            </div>
+            <div>
+                <h1>com <span style="color:#013C3C; font-weight: 500;">LyBooks</span></h1>
+            </div>
+        </div>
+
+        
+<div class="wel_cartoes">
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+    
+    <div class="p-5">
+
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+               <span style="color:orange">Ray Bradbury</span> <br> Fahrenheit 451
+            </h5>
+    </div>
+ <div class="w-full h-[200px]">
+        <img class="w-full h-full object-cover" src="{{ asset('assets/images/451.webp') }}" alt="teste" />
+    </div>
 </div>
+
+
+
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+    
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <span style="color:red">George Orwell</span> <br> 1984
+            </h5>
+        </a>
+           
+    </div>
+ <div class="w-full h-[200px]">
+        <img class="w-full h-full object-cover" src="{{ asset('assets/images/1984.jpg') }}" alt="teste" />
+    </div>
+</div>
+
+
+
+
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+    
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <span style="color:#91156b">Jane Austen</span> <br> Orgulho e Preconceito
+            </h5>
+        </a>
+    </div>
+ <div class="w-full h-[200px]">
+        <img class="w-full h-full object-cover" src="{{ asset('assets/images/orgulho_e_preconceito.jpg') }}" alt="teste" />
+    </div>
+</div>
+
+</div>
+
 
 </div>
     </body>
