@@ -53,7 +53,8 @@
 
 <div class="p-4 sm:ml-64">
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
-      
+   <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-5 border-2 border-gray-200 border-dashed rounded-lg">
+   <div class=" cartao relative overflow-x-auto shadow-md sm:rounded-lg">
    <div class="topo">
 
    <h1>Idiomas</h1>
