@@ -66,4 +66,26 @@ table {
     margin: 0px 2px;
   }
 
+  .drop{
+    background-color: #a47864;
+    border: transparent;
+    color: white;
+    border-radius: 20px;
+  }
   
+  .lybooks {
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+  }
+
+  .links_nav img{
+    width: 20px;
+    height: 20px;
+  }
+
+  .links_nav{
+    color: #525252;
+    font-weight: 600;
+    font-size: 18px;
+  }
