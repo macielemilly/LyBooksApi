@@ -48,7 +48,7 @@
 
 
 <div class="p-4 sm:ml-64">
-   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
       
    <h1 class="text-4xl font-bold text-gray-900">Editora selecionado - {{$editoras->nome}}</h1>
     <div style="padding-top:15px;">
