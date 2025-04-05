@@ -24,13 +24,13 @@ Route::put('/editoras/{editor}', [EditorController::class,'update'])->name('edit
 Route::delete('/editoras/{editor}', [EditorController::class,'destroy'])->name('editoras.destroy')->middleware(['auth', 'verified']);
 
 //Linguagens
-Route::get('/languages', [LanguageController::class,'index'])->name('languages.index');
-Route::get('/languages/create', [LanguageController::class,'create'])->name('languages.create');
-Route::post('/languagens', [LanguageController::class,'store'])->name('languages.store');
-Route::get('/languages{language}', [LanguageController::class,'show'])->name('languages.show');
-Route::get('/languages/{language}/edit', [languageController::class,'edit'])->name('languages.edit');
-Route::put('/languages/{language}', [languageController::class,'update'])->name('languages.update');
-Route::delete('/languages/{language}', [languageController::class,'destroy'])->name('languages.destroy');
+Route::get('/languages', [LanguageController::class,'index'])->name('languages.index')->middleware(['auth', 'verified']);
+Route::get('/languages/create', [LanguageController::class,'create'])->name('languages.create')->middleware(['auth', 'verified']);
+Route::post('/languagens', [LanguageController::class,'store'])->name('languages.store')->middleware(['auth', 'verified']);
+Route::get('/languages{language}', [LanguageController::class,'show'])->name('languages.show')->middleware(['auth', 'verified']);
+Route::get('/languages/{language}/edit', [languageController::class,'edit'])->name('languages.edit')->middleware(['auth', 'verified']);
+Route::put('/languages/{language}', [languageController::class,'update'])->name('languages.update')->middleware(['auth', 'verified']);
+Route::delete('/languages/{language}', [languageController::class,'destroy'])->name('languages.destroy')->middleware(['auth', 'verified']);
 
 //Gêneros
 Route::get('/generos', [GeneroController::class,'index'])->name('generos.index');
