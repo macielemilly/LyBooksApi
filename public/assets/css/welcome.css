@@ -94,3 +94,31 @@ body{
 .livros_card{
     width: 300px;
 }
+
+.editoras{
+    height: 400px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 150px;
+}
+
+.editora_title{
+    width: 500px;
+    color: black;
+}
+
+.editora_title h1{
+    font-size: 60px;
+    color: #013C3C;
+}
+
+.editora_title p{
+    font-size: 25px;
+}
+
+.editoras_card {
+    height: 300px;
+    width: 300px;
+    margin-top: 60px;
+}

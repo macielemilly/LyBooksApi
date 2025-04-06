@@ -149,7 +149,6 @@
     <p>O LyBooks transforma a organização da sua biblioteca, tornando o gerenciamento dos livros muito mais prático, moderno e eficiente.</p>
 </div>
 
-<div>
 <div class="livros_card max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
     
     <div class="p-5">
@@ -162,8 +161,20 @@
         <img class="w-full h-full object-cover" src="{{ asset('assets/images/empregada.jpg') }}" alt="teste" />
     </div>
 </div>
-
-
 </div>
+
+<div class="editoras">
+<div class="editoras_card max-w-sm rounded-lg shadow-sm overflow-hidden">
+ <div class="w-full">
+        <img class="w-full h-full object-cover" src="{{ asset('assets/images/editoras_welcome.avif') }}" alt="teste" />
+    </div>
+</div>
+
+<div class="editora_title">
+    <h1>Editoras</h1>
+    <p>Além de organizar os livros, o LyBooks também oferece recursos para facilitar o controle das editoras cadastradas na biblioteca. </p>
+</div>
+</div>
+
     </body>
 </html>
