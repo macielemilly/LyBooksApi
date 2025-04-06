@@ -37,14 +37,14 @@
                     </ul>
                     </div>
                     @auth
-                        <a
+                        <a style="color:white;"
                             href="{{ url('/dashboard') }}"
                             class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
                         >
                             Dashboard
                         </a>
                     @else
-                        <a
+                        <a style="color:white;"
                             href="{{ route('login') }}"
                             class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
                         >
@@ -52,7 +52,7 @@
                         </a>
 
                         @if (Route::has('register'))
-                            <a
+                            <a style="color:white;"
                                 href="{{ route('register') }}"
                                 class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                                 Register
@@ -136,6 +136,31 @@
     </div>
 </div>
 
+</div>
+
+
+</div>
+
+
+<div class="livros">
+
+<div class="livros_title">
+    <h1>Livros</h1>
+    <p>O LyBooks transforma a organização da sua biblioteca, tornando o gerenciamento dos livros muito mais prático, moderno e eficiente.</p>
+</div>
+
+<div>
+<div class="livros_card max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+    
+    <div class="p-5">
+
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+               <span style="color:blue">A Empregada</span> <br>Freida Mcfadden
+            </h5>
+    </div>
+ <div class="w-full h-[200px]">
+        <img class="w-full h-full object-cover" src="{{ asset('assets/images/empregada.jpg') }}" alt="teste" />
+    </div>
 </div>
 
 

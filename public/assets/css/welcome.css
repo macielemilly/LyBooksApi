@@ -12,8 +12,13 @@ body{
     display: flex;              
     justify-content: space-between; 
     align-items: center;        
-    background-color: #D09953;    
-    color: white;               
+    background-color: #D09953;  
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.267);  
+    color: white;     
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;          
 }
 .nav_welcome h1{
     margin-left: 40px;
@@ -44,7 +49,6 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #d09a53d5;
-    margin-top: 10px;
     height: 400px;
     flex-direction: column;
 }
@@ -61,5 +65,32 @@ body{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin: 40px 40px;
+    margin: 80px 40px;
+}
+
+.livros{
+    background-color: #D09953;
+    height: 400px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 120px;
+}
+
+.livros_title{
+    width: 500px;
+    color: white;
+}
+
+.livros_title h1{
+    font-size: 60px;
+    color: #013C3C;
+}
+
+.livros_title p{
+    font-size: 25px;
+}
+
+.livros_card{
+    width: 300px;
 }
