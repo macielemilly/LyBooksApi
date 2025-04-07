@@ -83,15 +83,15 @@
                 <h1>Organize seus livros</h1>
             </div>
             <div>
-                <h1>com <span style="color:#013C3C; font-weight: 500;">LyBooks</span></h1>
+                <h1>com <span style="color:white; font-weight: 900;">LyBooks</span></h1>
             </div>
         </div>
 
         
 <div class="wel_cartoes">
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden ">
     
-    <div class="p-5">
+    <div style="height:180px;" class="p-5">
 
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                <span style="color:orange">Ray Bradbury</span> <br> Fahrenheit 451
@@ -104,9 +104,10 @@
 
 
 
+
 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
     
-    <div class="p-5">
+<div style="height:180px" class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 <span style="color:red">George Orwell</span> <br> 1984
@@ -124,7 +125,7 @@
 
 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
     
-    <div class="p-5">
+<div style="height:180px" class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             <span style="color:#91156b">Jane Austen</span> <br> Orgulho e Preconceito
@@ -151,7 +152,7 @@
 
 <div class="livros_card max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
     
-    <div class="p-5">
+    <div  class="p-5">
 
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                <span style="color:blue">A Empregada</span> <br>Freida Mcfadden
