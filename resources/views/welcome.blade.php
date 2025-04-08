@@ -93,7 +93,7 @@
     
     <div style="height:180px;" class="p-5">
 
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                <span style="color:orange">Ray Bradbury</span> <br> Fahrenheit 451
             </h5>
     </div>
@@ -105,11 +105,11 @@
 
 
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
     
 <div style="height:180px" class="p-5">
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                 <span style="color:red">George Orwell</span> <br> 1984
             </h5>
         </a>
@@ -123,11 +123,11 @@
 
 
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
     
 <div style="height:180px" class="p-5">
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             <span style="color:#91156b">Jane Austen</span> <br> Orgulho e Preconceito
             </h5>
         </a>
@@ -150,11 +150,11 @@
     <p>O LyBooks transforma a organização da sua biblioteca, tornando o gerenciamento dos livros muito mais prático, moderno e eficiente.</p>
 </div>
 
-<div class="livros_card max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+<div class="livros_card max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
     
     <div  class="p-5">
 
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                <span style="color:blue">A Empregada</span> <br>Freida Mcfadden
             </h5>
     </div>
