@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deletar Editoras</title>
+    <title>Deletar Autores</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
 </head>
@@ -23,7 +23,7 @@
         <!-- Modal header -->
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
             <h3 class="text-xl font-semibold text-gray-900">
-                Criar Editora
+                Criar Autor
             </h3>
             <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="authentication-modal">
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -34,10 +34,10 @@
         </div>
         <!-- Modal body -->
         <div class="p-4 md:p-5">
-        <form class="space-y-4" action="{{ route('editoras.store')}}" method="post">
+        <form class="space-y-4" action="{{ route('authors.store')}}" method="post">
         @csrf
                 <div>
-                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome Editora <span style="color:red;">*</span></label>
+                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Autor <span style="color:red;">*</span></label>
                     <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="nome" value='{{old("nome")}}' required />
                 </div>
                 <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
@@ -50,7 +50,7 @@
 <div class="p-4 sm:ml-64">
    <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
       
-   <h1 class="text-4xl font-bold text-gray-900">Editora selecionado - {{$editoras->nome}}</h1>
+   <h1 class="text-4xl font-bold text-gray-900">Autor selecionado - {{$authors->nome}}</h1>
     <div style="padding-top:15px;">
     <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
     Deletar
@@ -75,9 +75,9 @@
                 <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
-                <h3 class="mb-5 text-lg font-normal text-gray-500">Tem certeza que deseja apagar essa Editora?</h3>
+                <h3 class="mb-5 text-lg font-normal text-gray-500">Tem certeza que deseja apagar esse autor?</h3>
                 <h4 class="mb-5  font-normal text-gray-500">Você apagará tudo relacionado a ele</h4>
-                <form action="{{ route('editoras.destroy', ['editor' => $editoras->id]) }}" method="post">
+                <form action="{{ route('authors.destroy', ['author' => $authors->id]) }}" method="post">
     @csrf
     <input type="hidden" name="_method" value="delete">
                 <!-- Botões dentro do modal -->
