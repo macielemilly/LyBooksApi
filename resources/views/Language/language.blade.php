@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idioma</title>
+    <title>Linguagem</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
 </head>
@@ -24,7 +24,7 @@
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
             <h3 class="text-xl font-semibold text-gray-900">
 
-                Adicionar Idioma
+                Adicionar Linguagem
 
             </h3>
             <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="authentication-modal">
@@ -40,8 +40,8 @@
         @csrf
                 <div>
 
-                    <label for="idioma" class="block mb-2 text-sm font-medium text-gray-900">Idiomas <span style="color:red;">*</span></label>
-                    <input name="idioma" id="idioma" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="idioma" value='{{old("idioma")}}' required />
+                    <label for="idioma" class="block mb-2 text-sm font-medium text-gray-900">Linguagem <span style="color:red;">*</span></label>
+                    <input name="idioma" id="idioma" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Linguagem" value='{{old("idioma")}}' required />
 
                 </div>
                 <button style="background-color:#D09953;" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
@@ -56,7 +56,7 @@
   
    <div class="topo">
 
-   <h1>Idiomas</h1>
+   <h1>Linguagem!</h1>
 
    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">Adicionar</button>
     </div>
