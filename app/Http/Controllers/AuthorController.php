@@ -35,6 +35,7 @@ class AuthorController extends Controller
     {
         $created = $this->author->create([
             'nome' => $request->input('nome'), 
+            'descricao' => $request->input('descricao'),
         ]);
 
         if($created){

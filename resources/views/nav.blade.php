@@ -63,7 +63,7 @@
             </a>
          </li>
          <li>
-            <a href="{{route('dashboard')}}" class="links_nav flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+            <a href="{{route('authors.index')}}" class="links_nav flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
             <img src="{{ asset('assets/images/nav_autores.png') }}" alt="">
                <span class="flex-1 ms-3 whitespace-nowrap">Autores</span>
             </a>
