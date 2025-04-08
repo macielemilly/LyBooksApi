@@ -91,7 +91,7 @@
 <div class="wel_cartoes">
 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden ">
     
-    <div style="height:180px;" class="p-5">
+    <div style="height:200px;" class="p-5">
 
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                <span style="color:orange">Ray Bradbury</span> <br> Fahrenheit 451
@@ -107,7 +107,7 @@
 
 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
     
-<div style="height:180px" class="p-5">
+<div style="height:200px" class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                 <span style="color:red">George Orwell</span> <br> 1984
@@ -125,7 +125,7 @@
 
 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
     
-<div style="height:180px" class="p-5">
+<div style="height:200px" class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             <span style="color:#91156b">Jane Austen</span> <br> Orgulho e Preconceito
