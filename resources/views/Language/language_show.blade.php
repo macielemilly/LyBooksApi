@@ -23,7 +23,7 @@
         <!-- Modal header -->
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
             <h3 class="text-xl font-semibold text-gray-900">
-                Adicionar idioma
+                Adicionar Linguagem
             </h3>
             <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="authentication-modal">
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -50,7 +50,7 @@
 <div class="p-4 sm:ml-80">
    <div  style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-20">
       
-   <h1 class="text-4xl font-bold text-gray-900">Idioma selecionado-{{$languages->idioma}}</h1>
+   <h1 class="text-4xl font-bold text-gray-900">Linguagem selecionada-{{$languages->idioma}}</h1>
     <div style="padding-top:15px;">
     <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
     Deletar
@@ -75,8 +75,8 @@
                 <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
-                <h3 class="mb-5 text-lg font-normal text-gray-500">Tem certeza que deseja apagar esse idioma?</h3>
-                <h4 class="mb-5  font-normal text-gray-500">Você apagará tudo relacionado a ele</h4>
+                <h3 class="mb-5 text-lg font-normal text-gray-500">Tem certeza que deseja apagar essa linguagem?</h3>
+                <h4 class="mb-5  font-normal text-gray-500">Você apagará tudo relacionado a ela</h4>
                 <form action="{{ route('languages.destroy', ['language' => $languages->id]) }}" method="post">
     @csrf
     <input type="hidden" name="_method" value="delete">
