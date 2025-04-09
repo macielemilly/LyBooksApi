@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Capriola&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 body{
-    background-color: #e7e5e5 ;
+    background-color: #e7e5e5 ; /*#e7e5e5*/
     font-family: Poppins;
 }
 
@@ -14,6 +14,12 @@ body{
     padding: 15px 20px 0 20px;
    
 }
+
+.cartoes h1{
+    color: black;
+   
+}
+
 
 .itens_cartoes img{
     width: 28px;
@@ -31,7 +37,7 @@ body{
 }
 
 .cartoes button{
-    background-color: #D09953;
+    background-color: #035353;
 }
 
 .botao_home{

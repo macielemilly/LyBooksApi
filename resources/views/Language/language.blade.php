@@ -44,14 +44,14 @@
                     <input name="idioma" id="idioma" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Linguagem" value='{{old("idioma")}}' required />
 
                 </div>
-                <button style="background-color:#D09953;" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
+                <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
             </form>
         </div>
     </div>
 </div>
 
 
-<div class="p-4 sm:ml-64">
+<div class="p-4 sm:ml-80">
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
   
    <div class="topo">
@@ -77,7 +77,7 @@
 
 
 @foreach($languages as $language)
-        <div style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg mt-5">
+        <div style="background-color:#013C3C; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg mt-5">
             <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
                 <div class="p-5">
                     <a href="#">
