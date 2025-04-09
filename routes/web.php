@@ -7,12 +7,22 @@ use App\Http\Controllers\EditorController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AluguelController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [HomeController::class,'index'])->name('dashboard');
+
+
+Route::get('/alugueis', [AluguelController::class, 'index'])->name('alugueis.index')->middleware(['auth', 'verified']);
+Route::get('/alugueis/create', [AluguelController::class, 'create'])->name('alugueis.create')->middleware(['auth', 'verified']);
+Route::post('/alugueis', [AluguelController::class, 'store'])->name('alugueis.store')->middleware(['auth', 'verified']);
+Route::get('/alugueis/{aluguel}', [AluguelController::class, 'show'])->name('alugueis.show')->middleware(['auth', 'verified']);
+Route::get('/alugueis/{aluguel}/edit', [AluguelController::class, 'edit'])->name('alugueis.edit')->middleware(['auth', 'verified']);
+Route::put('/alugueis/{aluguel}', [AluguelController::class, 'update'])->name('alugueis.update')->middleware(['auth', 'verified']);
+Route::delete('/alugueis/{aluguel}', [AluguelController::class, 'destroy'])->name('alugueis.destroy')->middleware(['auth', 'verified']);
 
 //Editora
 Route::get('/editoras', [EditorController::class,'index'])->name('editoras.index')->middleware(['auth', 'verified']);
