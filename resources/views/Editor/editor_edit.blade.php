@@ -12,7 +12,7 @@
     
 @extends('nav')
 
-<div class="p-4 sm:ml-64">
+<div class="p-4 sm:ml-80">
    <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
@@ -30,7 +30,7 @@
                           value="{{$editoras->nome}}" type="text" id="nome" name="nome" placeholder="Nome"/>
                           <input type="hidden" name="_method" value="PUT">
                     </div>
-                    <button style="background-color:#D09953;" type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Editar
+                    <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Editar
                     </button>
                 </form>
         </div>

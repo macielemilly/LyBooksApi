@@ -11,7 +11,8 @@
 </head>
 <body>
 @extends('nav')
-<div class="cartoes sm:ml-64">
+
+<div class="cartoes sm:ml-80">
    <div class="p-3 rounded-lg mt-20">
    <div class="relative overflow-x-auto  sm:rounded-lg">
         <h1>Bem-Vindo(a) {{ auth()->user()->name }}!</h1>
@@ -20,8 +21,8 @@
 </div>
 
 
-<div class="cartoes sm:ml-64">
-   <div  style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-2">
+<div class="cartoes sm:ml-80">
+   <div  style="background-color:#013C3C; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-2">
    <div class=" cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -45,8 +46,8 @@
 </div>
 </div>
 
-<div class="cartoes sm:ml-64">
-<div  style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-8">
+<div class="cartoes sm:ml-80">
+<div  style="background-color:#013C3C; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-15">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -70,8 +71,8 @@
 </div>
 </div>
 
-<div class="cartoes sm:ml-64">
-<div  style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-8">
+<div class="cartoes sm:ml-80">
+<div  style="background-color:#013C3C; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-15">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -95,8 +96,8 @@
 </div>
 </div>
 
-<div class="cartoes sm:ml-64">
-<div  style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-8">
+<div class="cartoes sm:ml-80">
+<div  style="background-color:#013C3C; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-15">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -120,8 +121,8 @@
 </div>
 </div>
 
-<div class="cartoes sm:ml-64">
-<div  style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-8">
+<div class="cartoes sm:ml-80">
+<div  style="background-color:#013C3C; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-15">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">
@@ -145,8 +146,8 @@
 </div>
 </div>
 
-<div class="cartoes sm:ml-64">
-<div  style="background-color:#D09953; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-8">
+<div class="cartoes sm:ml-80">
+<div  style="background-color:#013C3C; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.267);;" class="p-3 rounded-lg mt-15">
    <div class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="p-5">
         <a href="#">

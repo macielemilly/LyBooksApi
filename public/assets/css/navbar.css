@@ -6,12 +6,18 @@ body{
 }
 
 .navs{
-  background-image: linear-gradient(to right, #D09953, #bd9e5b, #cfaa79  );
+  background-image: linear-gradient(to right, #013C3C, #024747, #035353  );
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.267);
 }
 
 .side{
-  background-color: #F5F2E7; /*D09953*/
+  background-color: white /*D09953*/
+  
+}
+
+.side span{
+  font-size: 22px;
+  margin: 5px 10px;
 }
 
 table {
@@ -43,14 +49,14 @@ table {
   }
 
   .topo button{
-    background-color: #D09953;
+    background-color: #035353;
     width: 120px;
     height: 40px;
     border-radius: 10px;
   }
 
   .editar{
-    background-color: #D09953;
+    background-color: #035353;
     color: white;
     border: none;
     border-radius: 10px;
@@ -60,7 +66,7 @@ table {
   }
 
   .deletar{
-    background-color: #cfaa79;
+    background-color: #035353;
     color: white;
     border: none;
     border-radius: 10px;
