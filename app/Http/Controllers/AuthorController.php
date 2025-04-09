@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
-    
     public readonly Author $author;
 
     public function __construct(){
