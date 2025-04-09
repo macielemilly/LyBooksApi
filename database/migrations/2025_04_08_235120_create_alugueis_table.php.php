@@ -11,7 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+       
+    {
+        Schema::create('aluguel', function (Blueprint $table) {
+            $table->id();                        
+            $table->string('nome');              
+            $table->string('locatario');         
+            $table->date('data_aluguel');        
+            $table->date('data_devolucao');       
+            $table->timestamps();                
+        });
+    }
     }
 
     /**
@@ -19,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('aluguel');
     }
 };
