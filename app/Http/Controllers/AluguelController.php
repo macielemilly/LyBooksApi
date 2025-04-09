@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Aluguel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AluguelController extends Controller
@@ -32,6 +33,9 @@ class AluguelController extends Controller
      */
     public function store(Request $request)
     {
+         // Converter a data do aluguel para o formato Y-m-d
+   
+
         $created = $this->aluguel->create([
             'nome' => $request->input('nome'),
             'locatario' => $request->input('locatario'),

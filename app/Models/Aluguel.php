@@ -11,15 +11,16 @@ class Aluguel extends Model
     protected $fillable = [
         'nome','locatario','data_aluguel','data_devolucao'
     ];
+  
+    public function getDataAluguelFormatadaAttribute()
+{
+    return \Carbon\Carbon::parse($this->attributes['data_aluguel'])->format('d/m/Y');
+}
 
-    public function getDataAluguelAttribute($value)
-    {
-        return Carbon::parse($value)->format('d/m/Y'); // Formato brasileiro: DD/MM/AAAA
-    }
-
-    public function getDataDevolucaoAttribute($value)
-    {
-        return Carbon::parse($value)->format('d/m/Y');
-    }
+public function getDataDevolucaoFormatadaAttribute()
+{
+    return \Carbon\Carbon::parse($this->attributes['data_devolucao'])->format('d/m/Y');
+}
+    
 }
 

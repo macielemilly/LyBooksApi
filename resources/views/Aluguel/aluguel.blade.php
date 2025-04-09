@@ -89,8 +89,8 @@
                             </div>
                         </a>
                         <p class="mb-3 font-normal text-gray-700">Locatário: {{ $aluguel->locatario }}</p>
-                        <p class="mb-3 font-normal text-gray-700">Data de Aluguel: {{ $aluguel->data_aluguel }}</p>
-                        <p class="mb-3 font-normal text-gray-700">Data de Devolução: {{ $aluguel->data_devolucao }}</p>
+                        <p class="mb-3 font-normal text-gray-700">Data de Aluguel: {{ $aluguel->data_aluguel_formatada }}</p>
+                        <p class="mb-3 font-normal text-gray-700">Data de Devolução: {{ $aluguel->data_devolucao_formatada }}</p>
                         <div class="botao_tab">
                             <a href="{{ route('alugueis.edit', ['aluguel' => $aluguel->id]) }}"><button class="editar">Editar</button></a>
                             <a href="{{ route('alugueis.show', ['aluguel' => $aluguel->id]) }}"><button class="deletar">Mostrar</button></a>
