@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\StoreEditor;
 use App\Models\Editor; 
 use Illuminate\Http\Request;
 
@@ -31,7 +32,7 @@ class EditorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreEditor $request)
     {
         $created = $this->editor->create([
             'nome' => $request->input('nome'), 
@@ -62,7 +63,7 @@ class EditorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreEditor $request, string $id)
     {
         $updated = Editor::where('id', $id)->update($request->except(['_token','_method']));
 
