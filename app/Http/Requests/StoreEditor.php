@@ -22,7 +22,7 @@ class StoreEditor extends FormRequest
     public function rules(): array
     {
         return [
-           'nome' => 'required|min:3|max:50|unique:editoras', 
+           'nome' => 'required|min:3|max:50|unique:editors', 
         ];
     }
 }
