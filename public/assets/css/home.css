@@ -58,6 +58,9 @@ body{
 .grafic {
     height: 500px;
     width: 800px;
+    background-color: #035353;
+    display: flex;
+    justify-content: space-between;
 }
 
 .liv_ge{
@@ -83,4 +86,26 @@ body{
 .info{
     width: 720px;
     margin: 10px 0 0 10px;
+}
+
+.grafic_pizza{
+    height: 450px;
+    width: 380px;
+}
+
+.infos_main{
+    width: 350px;
+}
+
+.info1{
+    background-color: white;
+    height: 210px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.info2{
+    height: 210px;
+    background-color: white;
+    border-radius: 10px;
 }
