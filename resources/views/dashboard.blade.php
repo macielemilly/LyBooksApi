@@ -13,7 +13,7 @@
 @extends('nav')
 
 <div class="cartoes sm:ml-80">
-   <div class="p-3 rounded-lg mt-20">
+   <div class="p-3 rounded-lg mt-25">
    <div class="relative overflow-x-auto  sm:rounded-lg">
         <h1>Bem-Vindo(a) {{ auth()->user()->name }}!</h1>
     </div>
@@ -21,7 +21,7 @@
 </div>
 
 <div class=" sm:ml-80">
-   <div class="p-3 rounded-lg mt-20">
+   <div class="p-3 rounded-lg mt-5">
    <div class=" dash  relative overflow-x-auto  sm:rounded-lg">
 
       <div class="graficos">
@@ -48,7 +48,7 @@
       <div>
         <div class="tabelas">
             <div class="liv_gen">
-            <div style="height: 150px; margin: 0px 10px; width: 350px" class=" liv_ge max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div style="height: 150px; margin: 0px 10px; width: 350px; background-color:#027373;" class=" liv_ge max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <img class="rounded-t-lg w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" src="{{ asset('assets/images/abra-o-livro.png') }}" alt="" >
     <a href="#">
         <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Livros</h5>
@@ -58,9 +58,9 @@
 
 
 
-<div style="height: 150px; width: 350px;margin: 0px 10px; " class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+<div style="height: 150px; width: 350px;margin: 0px 10px; color:white; background-color:#FFB400;" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <img class="rounded-t-lg w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" src="{{ asset('assets/images/fantasma.png') }}" alt="" >
-    <a href="#">
+    <a href="{{route('generos.index')}}">
         <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Gêneros</h5>
     </a>
     <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Quantidade: {{ $total_generos }}</p>
@@ -71,9 +71,9 @@
             <div class="aut_edit">
 
 
-            <div  style="height: 150px; width: 350px;margin: 10px 10px; "  class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div  style="height: 150px; width: 350px; margin: 10px 10px; background-color:#E63946; "  class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <img class="rounded-t-lg w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" src="{{ asset('assets/images/editora.png') }}" alt="" >
-    <a href="#">
+    <a href="{{route('editoras.index')}}">
         <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Editoras</h5>
     </a>
     <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Quantidade: {{ $total_editoras }}</p>
@@ -81,9 +81,9 @@
 
 
 
-<div  style="height: 150px; width: 350px;margin: 10px 10px; " class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+<div  style="height: 150px; width: 350px;margin: 10px 10px; background-color:#F2542D ; " class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <img class="rounded-t-lg w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" src="{{ asset('assets/images/autores.png') }}" alt="" >
-    <a href="#">
+    <a href="{{route('authors.index')}}">
         <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Autores</h5>
     </a>
     <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Quantidade: {{ $total_authors }}</p>
