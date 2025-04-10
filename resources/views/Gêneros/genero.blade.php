@@ -84,7 +84,7 @@
 @endif
 
 
-<div class=" mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<div class=" tabela mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @foreach($generos as $genero)
         <div style="background-color:#FFB400; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
             <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
