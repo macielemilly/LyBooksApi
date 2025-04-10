@@ -36,7 +36,7 @@
         @csrf
                 <div>
                     <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome Gênero <span style="color:red;">*</span></label>
-                    <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="nome" value='{{old("nome")}}' required />
+                    <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="nome" value='{{old("nome")}}'  />
                 </div>
                 <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
             </form>
@@ -51,7 +51,7 @@
    
    <div class="topo">
    <h1>Gêneros!</h1>
-   <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">Adicionar</button>
+   <button style="background-color:#FFB400;" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">Adicionar</button>
     </div>
 
     @if(session()->has('message'))
@@ -84,8 +84,9 @@
 @endif
 
 
-@foreach($generos as $genero)
-        <div style="background-color:#013C3C; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg mt-5">
+<div class=" mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    @foreach($generos as $genero)
+        <div style="background-color:#FFB400; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
             <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
                 <div class="p-5">
                     <a href="#">
@@ -94,15 +95,20 @@
                         </div>
                     </a>
                     <p class="mb-3 font-normal text-gray-700">ID: {{$genero->id}}</p>
-                    <div class="botao_tab">
-                    <a href="{{ route('generos.edit', ['genero' => $genero->id]) }}"><button class="editar" >Editar</button></a>
-                    <a href="{{ route('generos.show', ['genero' => $genero->id]) }}"><button class="deletar">Mostrar</button></a>
+                    <div class="botao_tab flex gap-2">
+                        <a href="{{ route('generos.edit', ['genero' => $genero->id]) }}">
+                            <button class="editar">Editar</button>
+                        </a>
+                        <a href="{{ route('generos.show', ['genero' => $genero->id]) }}">
+                            <button class="deletar">Mostrar</button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     @endforeach
 </div>
+
    
 
 <script>

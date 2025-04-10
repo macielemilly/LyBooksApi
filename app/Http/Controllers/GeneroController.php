@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\StoreGenero;
 use App\Models\Genero;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,7 @@ class GeneroController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreGenero $request)
     {
         $created = $this->genero->create([
             'nome' => $request->input('nome'), 
@@ -61,7 +62,7 @@ class GeneroController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreGenero $request, string $id)
     {
         $updated = Genero::where('id', $id)->update($request->except(['_token','_method']));
 
