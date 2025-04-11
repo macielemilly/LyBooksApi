@@ -52,7 +52,7 @@
 
 
 <div class="p-4 sm:ml-80">
-   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div class="tabela p-4 border-2 border-gray-200 border-dashed rounded-lg mt-25">
   
    <div class="topo">
 
@@ -76,7 +76,7 @@
 
 
 
-<div class=" tabela mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<div class=" mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @foreach($languages as $language)
         <div style="background-color:#7F8C8D; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
             <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
