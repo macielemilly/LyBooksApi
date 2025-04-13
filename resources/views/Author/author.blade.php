@@ -54,7 +54,7 @@
 
 
 <div class="p-4 sm:ml-80">
-   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div class="tabela  p-4 border-2 border-gray-200 border-dashed rounded-lg mt-25">
       
    <div class="topo">
    <h1>Autores!</h1>
@@ -75,8 +75,10 @@
 @endif
 
    
+   
+<div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @foreach($authors as $author)
-        <div style="background-color:#013C3C; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg mt-5">
+        <div style="background-color:#F2542D; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
             <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
                 <div class="p-5">
                     <a href="#">
@@ -84,18 +86,20 @@
                             <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{$author->nome}}</h5>
                         </div>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700">Descrição: {{$author->descricao}}</p>
-                    <div class="botao_tab">
-                    <a href="{{ route('authors.edit', ['author' => $author->id]) }}"><button class="editar" >Editar</button></a>
-                    <a href="{{ route('authors.show', ['author' => $author->id]) }}"><button class="deletar">Mostrar</button></a>
+                    <p class="mb-3 font-normal text-gray-700">ID: {{$author->id}}</p>
+                    <div class="botao_tab flex gap-2">
+                    <a href="{{ route('authors.edit', ['author' => $author->id]) }}">
+                            <button style="background-color:green;" class="editar">Editar</button>
+                        </a>
+                        <a href="{{ route('authors.show', ['author' => $author->id]) }}">
+                            <button style="background-color:red;" class="deletar">Mostrar</button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     @endforeach
 </div>
-   
-
 
 
 

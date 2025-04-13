@@ -112,3 +112,25 @@ table {
   border-radius: 20px;
   box-shadow: 0 6px 5px rgba(0, 0, 0, 0.267);
 }
+
+.mostrar img{
+width: 400px;
+height: 500px;
+}
+
+.mostrar{
+  display: flex;
+  flex-direction: row;
+}
+
+.infos_show{
+  margin: 20px 0 0px 40px;
+}
+
+.infos_show h1{
+  margin: 0 0 20px 0
+}
+
+.infos_show p{
+  margin: 0 0 20px 0
+}
