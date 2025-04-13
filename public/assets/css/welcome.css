@@ -130,3 +130,33 @@ body{
     width: 300px;
     margin-top: 60px;
 }
+
+.autores{
+    background-color: #0d5151;
+    height: 600px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+    text-align: justify;
+}
+
+.title_autores{
+    width: 550px;
+    color: white;
+    font-size: 15px;
+}
+
+.title_autores p{
+    margin: 20px 0 0 0;
+    font-size: 25px;
+}
+
+.title_autores h1{
+    font-size: 60px;
+    color: #F8E5CE;
+}
+
+.autores h5{
+    font-size: 30px;
+}

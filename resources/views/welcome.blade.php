@@ -32,7 +32,6 @@
                         <li>Livros</li>
                         <li>Editoras</li>
                         <li>Autores</li>
-                        <li>Gêneros</li>
                         <li>Populares</li>
                     </ul>
                     </div>
@@ -177,5 +176,42 @@
 </div>
 </div>
 
+
+<div class="autores">
+
+<div class="title_autores">
+    <h1>Autores</h1><br>
+
+    <div style="display: flex;">
+  <div style="margin:0 20px 0 0">
+
+            <span>Nascimento</span><br>
+            <span>21 jun. 1839</span>
+        </div>
+        <div>
+            <span>Morte</span><br>
+            <span>28 set. 1908</span>
+        </div>
+    </div>
+
+    <p>Machado de Assis (1839–1908) foi um dos maiores escritores da literatura brasileira e um dos fundadores da Academia Brasileira de Letras, ocupando a cadeira nº 23. Nascido no Rio de Janeiro, de origem humilde e autodidata, destacou-se como romancista, contista, poeta, dramaturgo e cronista.</p>
+</div>
+
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+    
+<div style="height:220px" class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                <span style="color:#b36a11">Machado de Assis</span>
+            </h5>
+        </a>
+           
+    </div>
+ <div class="w-full h-[300px]">
+        <img class="w-full h-full object-cover" src="{{ asset('assets/images/machado.webp') }}" alt="teste" />
+    </div>
+</div>
+
+</div>
     </body>
 </html>
