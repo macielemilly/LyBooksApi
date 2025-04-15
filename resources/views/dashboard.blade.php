@@ -92,22 +92,26 @@
 <div class="infos_main">
 
 <div class="info1">
-<div  style=" height: 210px; ; " class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <img class="rounded-t-lg w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" src="{{ asset('assets/images/autores.png') }}" alt="" >
-    <a href="{{route('authors.index')}}">
-        <h5 style="color:white;" class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Autores</h5>
+<div  style=" height: 210px;" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+  <div style=" display:flex; flex-direction:row; ">
+    <a href="{{route('languages.index')}}">
+        <h5 style="color:black; margin-right:10px" class="mb-2 text-2xl font-semibold tracking-tight text-gray-900">Idiomas</h5>
     </a>
-    <p class="mb-3 font-normal text-black-500">Quantidade: {{ $total_authors }}</p>
+    <img class="rounded-t-lg w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" src="{{ asset('assets/images/idiomas.png') }}" alt="" >
+    </div>
+    <p class="mb-3 font-normal text-black-500">Quantidade: {{ $total_languages}}</p>
 </div>
 </div>
 
 <div class="info2">
 <div  style=" height: 210px; ; " class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <img class="rounded-t-lg w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" src="{{ asset('assets/images/autores.png') }}" alt="" >
-    <a href="{{route('authors.index')}}">
-        <h5 style="color:white;" class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Autores</h5>
+<div style=" display:flex; flex-direction:row; ">
+    <a href="">
+        <h5 style="color:black; margin-right:10px" class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Usuários</h5>
     </a>
-    <p class="mb-3 font-normal text-black-500">Quantidade: {{ $total_authors }}</p>
+    <img class="rounded-t-lg w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" src="{{ asset('assets/images/pessoa.png') }}" alt="" >
+    </div>
+    <p class="mb-3 font-normal text-black-500">Quantidade: {{ $total_user }}</p>
 </div>
 </div>
 
@@ -206,7 +210,7 @@ const getChartOptions = () => {
         }
       },
     },
-    labels: ["Direct", "Organic search", "Referrals"],
+    labels: ["Terror", "Fantasia", "Romance"],
     dataLabels: {
       enabled: true,
       style: {
