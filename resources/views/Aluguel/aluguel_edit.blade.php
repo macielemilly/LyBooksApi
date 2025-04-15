@@ -23,23 +23,23 @@
         <form class="space-y-4" action="{{ route('alugueis.update', ['aluguel' => $aluguel->id]) }}" method="post">
                 @csrf
                 <div>
-                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Locatário<span class="asterisco">*</span></label>
+                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Locatário<span style="color:red; margin-left:5px;">*</span></label>
                     <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            value="{{ $aluguel->nome }}" type="text" id="nome" name="nome" placeholder="Nome do Locatário"/>
                     <input type="hidden" name="_method" value="PUT">
                 </div>
                 <div>
-                    <label for="locatario" class="block mb-2 text-sm font-medium text-gray-900">Locatário<span class="asterisco">*</span></label>
+                    <label for="locatario" class="block mb-2 text-sm font-medium text-gray-900">Locatário<span style="color:red; margin-left:5px;">*</span></label>
                     <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            value="{{ $aluguel->locatario }}" type="text" id="locatario" name="locatario" placeholder="Nome do Locatário"/>
                 </div>
                 <div>
-                    <label for="data_aluguel" class="block mb-2 text-sm font-medium text-gray-900">Data do Aluguel<span class="asterisco">*</span></label>
+                    <label for="data_aluguel" class="block mb-2 text-sm font-medium text-gray-900">Data do Aluguel<span style="color:red; margin-left:5px;">*</span></label>
                     <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            value="{{ $aluguel->data_aluguel }}" type="date" id="data_aluguel" name="data_aluguel" placeholder="Data do Aluguel"/>
                 </div>
                 <div>
-                    <label for="data_devolucao" class="block mb-2 text-sm font-medium text-gray-900">Data de Devolução<span class="asterisco">*</span></label>
+                    <label for="data_devolucao" class="block mb-2 text-sm font-medium text-gray-900">Data de Devolução<span style="color:red; margin-left:5px;">*</span></label>
                     <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            value="{{$aluguel->data_devolucao}}" type="date" id="data_devolucao" name="data_devolucao" placeholder="Data de Devolução"/>
                 </div>

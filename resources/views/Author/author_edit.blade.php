@@ -23,13 +23,13 @@
         <form class="space-y-4" action="{{ route('authors.update', ['author' => $authors->id])}}" method='post'>
                 @csrf
                     <div>
-                        <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Autor<span class="asterisco">*</span></label>
+                        <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Autor<span style="color:red; margin-left:5px;">*</span></label>
                         <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                           value="{{$authors->nome}}" type="text" id="nome" name="nome" placeholder="Nome"/>
                           <input type="hidden" name="_method" value="PUT">
                     </div>
                     <div>
-                    <label for="Descrição" class="block mb-2 text-sm font-medium text-gray-900">Descrição<span class="asterisco">*</span></label>
+                    <label for="Descrição" class="block mb-2 text-sm font-medium text-gray-900">Descrição<span style="color:red; margin-left:5px;">*</span></label>
                           <textarea style="height:100px"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            type="text" id="descricao" name="descricao" placeholder="Descricao">{{$authors->descricao}}</textarea>
                     </div>
