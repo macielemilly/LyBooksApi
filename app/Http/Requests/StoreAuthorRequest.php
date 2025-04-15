@@ -23,7 +23,7 @@ class StoreAuthorRequest extends FormRequest
     {
         return [
            
-                'nome' => 'required|min:3|max:50|unique:authors', 'descricao' => 'required|min:3|max:255|unique:authors'
+                'nome' => 'required|min:3|max:50|unique:authors', 'descricao' => 'required|min:3|max:255'
              ];
        
     }

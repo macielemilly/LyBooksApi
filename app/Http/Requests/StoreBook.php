@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAluguel extends FormRequest
+class StoreBook extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,7 +22,7 @@ class StoreAluguel extends FormRequest
     public function rules(): array
     {
         return [
-            'nome'=> 'required|min:3|max:50|unique:alugueis' ,'locatario' =>'required|min:3|max:50|'
+            //
         ];
     }
 }
