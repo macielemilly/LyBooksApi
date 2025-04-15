@@ -99,7 +99,7 @@
                     <p class="mb-3 font-normal text-gray-700">ID:  {{$editora->id}}</p>
                     <div class="botao_tab flex gap-2">
                     <a href="{{ route('editoras.edit', ['editor' => $editora->id]) }}"><button class="editar" >Editar</button></a>
-                    <form class="inline" action="{{ route('editoras.destroy', ['editor' => $editora->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este gênero?');">
+                    <form class="inline" action="{{ route('editoras.destroy', ['editor' => $editora->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta editora?');">
                                     @csrf
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button type="submit" class="deletar text-red-600 hover:text-red-800">Excluir</button>

@@ -99,9 +99,11 @@
                         <a href="{{ route('generos.edit', ['genero' => $genero->id]) }}">
                             <button style="background-color:green;" class="editar">Editar</button>
                         </a>
-                        <a href="{{ route('generos.show', ['genero' => $genero->id]) }}">
-                            <button style="background-color:red;" class="deletar">Mostrar</button>
-                        </a>
+                        <form class="inline" action="{{ route('generos.destroy', ['genero' => $genero->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este gênero?');">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="deletar text-red-600 hover:text-red-800">Excluir</button>
+                                </form>
                     </div>
                 </div>
             </div>
