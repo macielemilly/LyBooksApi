@@ -86,6 +86,13 @@
 @endif
 
    
+
+<div class="mt-4">
+    @if($editoras->isEmpty())
+        <div class="text-center text-gray-500 text-lg font-medium rounded p-4">
+            Nenhuma Editora cadastrado ainda.
+        </div>
+    @else
 <div class="  mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @foreach($editoras as $editora)
         <div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
@@ -110,7 +117,8 @@
         </div>
     @endforeach
 </div>
-
+@endif
+</div>
    
 
 

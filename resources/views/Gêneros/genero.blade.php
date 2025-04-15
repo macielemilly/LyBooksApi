@@ -84,31 +84,39 @@
 @endif
 
 
-<div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    @foreach($generos as $genero)
-        <div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
-            <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-400">
-                <div class="p-5">
-                    <a href="#">
-                        <div class="itens_cartoes">
-                            <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{$genero->nome}}</h5>
-                        </div>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700">ID: {{$genero->id}}</p>
-                    <div class="botao_tab flex gap-2">
-                        <a href="{{ route('generos.edit', ['genero' => $genero->id]) }}">
-                            <button style="background-color:green;" class="editar">Editar</button>
-                        </a>
-                        <form class="inline" action="{{ route('generos.destroy', ['genero' => $genero->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este gênero?');">
+<div class="mt-4">
+    @if($generos->isEmpty())
+        <div class="text-center text-gray-500 text-lg font-medium rounded p-4">
+            Nenhum gênero cadastrado ainda.
+        </div>
+    @else
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            @foreach($generos as $genero)
+                <div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
+                    <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-400">
+                        <div class="p-5">
+                            <a href="#">
+                                <div class="itens_cartoes">
+                                    <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{$genero->nome}}</h5>
+                                </div>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700">ID: {{$genero->id}}</p>
+                            <div class="botao_tab flex gap-2">
+                                <a href="{{ route('generos.edit', ['genero' => $genero->id]) }}">
+                                    <button style="background-color:green;" class="editar">Editar</button>
+                                </a>
+                                <form class="inline" action="{{ route('generos.destroy', ['genero' => $genero->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este gênero?');">
                                     @csrf
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button type="submit" class="deletar text-red-600 hover:text-red-800">Excluir</button>
                                 </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-    @endforeach
+    @endif
 </div>
 
    

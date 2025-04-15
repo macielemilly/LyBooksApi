@@ -44,7 +44,8 @@
 
                 <div>
                     <label for="Descrição" class="block mb-2 text-sm font-medium text-gray-900">Descrição <span style="color:red;">*</span></label>
-                    <input name="descricao" id="descricao" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="descricao" value='{{old("descricao")}}' required />
+                    <textarea style="height:100px"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
+                    type="text" id="descricao" name="descricao" placeholder="Descricao"></textarea>
                 </div>
                 <button style="background-color:#035353;"type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
             </form>
@@ -91,7 +92,12 @@
 @endif
 
    
-   
+<div class="mt-4">
+    @if($authors->isEmpty())
+        <div class="text-center text-gray-500 text-lg font-medium rounded p-4">
+            Nenhum Autor cadastrado ainda.
+        </div>
+    @else  
 <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @foreach($authors as $author)
         <div style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg ">
@@ -116,7 +122,8 @@
         </div>
     @endforeach
 </div>
-
+@endif
+</div>
 
 
 <script>

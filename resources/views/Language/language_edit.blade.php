@@ -13,11 +13,10 @@
 
 @extends('nav')
 
-<div class="px-100 py-40 sm:ml-80">
-   <div  style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-4 rounded-lg mt-20">
-    <div  style="background-color:white;" class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
-            <h3 class="text-xl font-semibold text-gray-900">
+<div class="px-100 py-60 sm:ml-80">
+    <div  style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);"" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div style="background-color:#013C3C;" class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+            <h3 style="color:white"class="text-xl font-semibold text-gray-900">
                 Editar Linguagem
             </h3>
         </div>
@@ -41,5 +40,4 @@
         </div>
     </div>
    </div>
-</div>
 </body>
