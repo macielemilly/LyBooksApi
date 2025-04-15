@@ -108,7 +108,7 @@
                             <button style="background-color:green;" class="editar">Editar</button>
                         </a>
                         <a href="{{ route('authors.show', ['author' => $author->id]) }}">
-                            <button style="background-color:red;" class="deletar">Mostrar</button>
+                            <button style="background-color:#035353;" class="deletar">Mostrar</button>
                         </a>
                     </div>
                 </div>

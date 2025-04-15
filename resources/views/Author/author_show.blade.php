@@ -47,22 +47,31 @@
 </div>
 
 
-<div class="p-4 sm:ml-80">
-   <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mostrar mt-20 p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+<div class="px-25 py-15 sm:ml-80">
+<div style="background-color:#F2542D; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg">
+   <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mostrar m-2 p-4 rounded-lg ">
       
    <div>
-   <img src="{{ asset('assets/images/451.webp') }}" alt="">
+   <img src="{{ asset('assets/images/pessoa.png') }}" alt="">
    </div>
 
    <div class="infos_show">
-   <h1 class="text-4xl font-bold text-gray-900">Autor selecionado - {{$authors->nome}}</h1>
+   <h1 class="text-4xl font-bold text-gray-900">{{$authors->nome}}</h1>
    <p>Descrição: {{$authors->descricao}}</p>
-   <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
+
+   <div class="delet_volt h-full w-full">
+   <button style="margin-top:60px;" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="w-full block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
     Deletar
 </button>
+<a href="{{route('authors.index')}}">
+                    <button style="background-color:white; color:black;" type="button" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Voltar
+                    </button>
+                    </a>
+                    </div>
    </div>
 
    </div>
+</div>
 </div>
 
 

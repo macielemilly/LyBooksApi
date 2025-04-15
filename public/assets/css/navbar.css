@@ -115,7 +115,7 @@ table {
 
 .mostrar img{
 width: 400px;
-height: 500px;
+height: 450px;
 }
 
 .mostrar{
@@ -124,7 +124,21 @@ height: 500px;
 }
 
 .infos_show{
-  margin: 20px 0 0px 40px;
+  margin: 20px 0 0px 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 700px;
+}
+
+.infos_show p{
+  font-size: 20px;
+}
+
+.delet_volt{
+  justify-content: end;
+  display: flex;
+  flex-direction: column;
 }
 
 .infos_show h1{
