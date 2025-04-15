@@ -160,3 +160,31 @@ body{
 .autores h5{
     font-size: 30px;
 }
+
+.populares{
+    height: 600px;
+    margin-top: 40px;
+    display: flex;
+    padding: 40px 100px;
+    flex-direction: column;
+}
+
+.populares h1{
+    font-size: 60px;
+    color: #013C3C;
+    margin: 0 0 20px 40px;
+}
+
+.book{
+    margin-right: 100px;
+    width: 200px;
+}
+
+#carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  #carousel {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;    
+  }

@@ -213,5 +213,119 @@
 </div>
 
 </div>
+
+<div class="populares">
+<h1>Populares</h1>
+
+<div class="relative">
+    <!-- Botão Esquerdo -->
+    <button style="background-color:#013C3C; color:white;" onclick="scrollCarousel(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow p-2 rounded-full hover:bg-gray-200">
+      ◀
+    </button>
+
+    <!-- Carrossel -->
+    <div id="carousel" class="flex overflow-x-auto scroll-smooth space-x-4 px-10">
+      <!-- Livro -->
+      <div style=" margin-right: 100px; margin-left: 25px;" class="book flex-shrink-0">
+        <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">Harry Potter e a Pedra Filosofal</p>
+        <p class="text-xs text-gray-500">J.K. Rowling</p>
+        <p class="text-xs">⭐⭐</p>
+      </div>
+
+      <!-- Livro -->
+      <div style=" margin-right: 100px;"class="book flex-shrink-0">
+        <img src="{{ asset('assets/images/uma-famlia-feliz.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">Uma Família Feliz</p>
+        <p class="text-xs text-gray-500">Raphael Montes</p>
+        <p class="text-xs">⭐⭐⭐⭐</p>
+      </div>
+
+      <!-- Livro -->
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/paciente-silenciosa.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">A Paciente Silenciosa</p>
+        <p class="text-xs text-gray-500">Alex Michaelides</p>
+        <p class="text-xs">⭐⭐⭐⭐⭐</p>
+      </div>
+
+      <!-- Livro -->
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/sherlock.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">Sherlock Holmes</p>
+        <p class="text-xs text-gray-500">Arthur Conan Doyle</p>
+        <p class="text-xs">⭐⭐⭐</p>
+      </div>
+
+      <!-- Livro -->
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/razão-amor.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">A Razão do Amor</p>
+        <p class="text-xs text-gray-500">Ali Hazelwood</p>
+        <p class="text-xs">⭐⭐⭐</p>
+      </div>
+      
+
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/ansiosa.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">Gente Ansiosa</p>
+        <p class="text-xs text-gray-500">Fredrik Backman</p>
+        <p class="text-xs">⭐⭐⭐⭐⭐</p>
+      </div>
+
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/cadaver.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">Saboroso Cadaver</p>
+        <p class="text-xs text-gray-500">Agustina Bazterrica</p>
+        <p class="text-xs">⭐⭐⭐⭐</p>
+      </div>
+
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/empregada.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">A Empregada</p>
+        <p class="text-xs text-gray-500">Freida McFadden</p>
+        <p class="text-xs">⭐⭐⭐⭐⭐</p>
+      </div>
+
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/principe-cruel.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">O Príncipe Cruel</p>
+        <p class="text-xs text-gray-500">Holly Black</p>
+        <p class="text-xs">⭐⭐⭐⭐⭐</p>
+      </div>
+
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/vbsa.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">Vermelho, Branco e Sangue Azul</p>
+        <p class="text-xs text-gray-500">Casey McQuiston
+        </p>
+        <p class="text-xs">⭐⭐⭐⭐</p>
+      </div>
+
+      <div style=" margin-right: 100px;" class="book  flex-shrink-0">
+        <img src="{{ asset('assets/images/dracula.jpg') }}" class="rounded-lg h-25 w-full object-cover mb-2">
+        <p class="text-sm font-medium">Drácula</p>
+        <p class="text-xs text-gray-500">Bram Stoker</p>
+        <p class="text-xs">⭐⭐⭐</p>
+      </div>
+    </div>
+
+    <!-- Botão Direito -->
+    <button style="background-color:#013C3C; color:white;" onclick="scrollCarousel(1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow p-2 rounded-full hover:bg-gray-200">
+      ▶
+    </button>
+  </div>
+</div>
+
+<script>
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('carousel');
+      const scrollAmount = 200; // pixels
+      carousel.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  </script>
     </body>
 </html>
