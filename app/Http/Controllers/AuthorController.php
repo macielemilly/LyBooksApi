@@ -63,7 +63,7 @@ class AuthorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreAuthorRequest $request, string $id)
     {
         $updated = Author::where('id', $id)->update($request->except(['_token','_method']));
 

@@ -70,7 +70,7 @@ class AluguelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update( StoreAluguel $request, string $id)
     {
         $updated = Aluguel::where('id', $id)->update($request->except(['_token', '_method']));
 
