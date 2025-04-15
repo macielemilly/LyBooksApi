@@ -7,6 +7,11 @@ body{
     background-color: #F8E5CE;
     font-family: Poppins;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
 .nav_welcome a{
     margin: 10px 15px;
 }
@@ -77,11 +82,12 @@ body{
 
 .livros{
     background-color: #0d5151;
-    height: 400px;
+    height: 500px;
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    padding: 40px 180px;
+    align-items: center;
+    padding: 40px 200px;
     text-align: justify;
 }
 
@@ -96,7 +102,7 @@ body{
 }
 
 .livros_title p{
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .livros_card{
@@ -104,11 +110,13 @@ body{
 }
 
 .editoras{
-    height: 400px;
+    height: 500px;
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 50px 200px;
+    text-align: justify;
 }
 
 .editora_title{
@@ -125,11 +133,13 @@ body{
     font-size: 25px;
 }
 
-.editoras_card {
-    height: 300px;
-    width: 300px;
-    margin-top: 60px;
+.editoras img{
+    height: 350px;
+    width: 500px;
 }
+
+
+
 
 .autores{
     background-color: #0d5151;
@@ -159,6 +169,10 @@ body{
 
 .autores h5{
     font-size: 30px;
+}
+
+.autores span{
+    font-size: 16px;
 }
 
 .populares{
