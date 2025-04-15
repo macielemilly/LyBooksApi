@@ -8,6 +8,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AluguelController;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -58,6 +59,14 @@ Route::get('/authors{author}', [AuthorController::class,'show'])->name('authors.
 Route::get('/authors/{author}/edit', [AuthorController::class,'edit'])->name('authors.edit')->middleware(['auth', 'verified']);
 Route::put('/authors/{author}', [AuthorController::class,'update'])->name('authors.update')->middleware(['auth', 'verified']);
 Route::delete('/authors/{author}', [AuthorController::class,'destroy'])->name('authors.destroy')->middleware(['auth', 'verified']);
+
+Route::get('/books', [BookController::class, 'index'])->name('books.index')->middleware(['auth', 'verified']);
+Route::get('/books/create', [BookController::class, 'create'])->name('books.create')->middleware(['auth', 'verified']);
+Route::post('/books', [BookController::class, 'store'])->name('books.store')->middleware(['auth', 'verified']);
+Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show')->middleware(['auth', 'verified']);
+Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit')->middleware(['auth', 'verified']);
+Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update')->middleware(['auth', 'verified']);
+Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy')->middleware(['auth', 'verified']);
 
 
 Route::get('/', function () {
