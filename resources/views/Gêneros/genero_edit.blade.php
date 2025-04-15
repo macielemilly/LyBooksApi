@@ -12,8 +12,8 @@
 @extends('nav')
 
 
-<div class="p-4 sm:ml-80">
-   <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-20">
+<div class="py-40 px-100 sm:ml-80">
+   <div style="background-color:#FFB400; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-4 rounded-lg mt-20">
    @if($errors->any())
     @foreach($errors->all() as $error)
     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
@@ -29,7 +29,7 @@
     </div>
     @endforeach
 @endif
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div style="background-color:white;" class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
             <h3 class="text-xl font-semibold text-gray-900">
                 Editar Editora
@@ -47,6 +47,10 @@
                     </div>
                     <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Editar
                     </button>
+                    <a href="{{route('generos.index')}}">
+                    <button style="background-color:white; color:black;" type="button" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Voltar
+                    </button>
+                    </a>
                 </form>
         </div>
     </div>
