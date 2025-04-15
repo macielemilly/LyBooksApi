@@ -105,7 +105,11 @@
                     <p class="mb-3 font-normal text-gray-700">ID: {{$language->id}}</p>
                     <div class="botao_tab flex gap-2">
                     <a href="{{ route('languages.edit', ['language' => $language->id]) }}"><button style="background-color:green"class="editar" >Editar</button></a>
-                    <a href="{{ route('languages.show', ['language' => $language->id]) }}"><button style="background-color:red"class="deletar">Mostrar</button></a>
+                    <form class="inline" action="{{ route('languages.destroy', ['language' => $language->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este idioma?');">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="deletar text-red-600 hover:text-red-800">Excluir</button>
+                                </form>
                     </div>
                 </div>
             </div>
