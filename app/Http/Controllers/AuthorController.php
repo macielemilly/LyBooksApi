@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Author; 
 use Illuminate\Http\Request;
+use App\Http\requests\StoreAuthorRequest;
 
 class AuthorController extends Controller
 {
@@ -30,7 +31,7 @@ class AuthorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAuthorRequest $request)
     {
         $created = $this->author->create([
             'nome' => $request->input('nome'), 
