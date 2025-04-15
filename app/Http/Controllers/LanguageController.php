@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Language; 
 use Illuminate\Http\Request;
+use App\Http\requests\StoreLanguage;
 
 class LanguageController extends Controller
 {
@@ -29,7 +30,7 @@ class LanguageController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreLanguage $request)
     {
         $created = $this->language->create([
             'idioma' => $request->input('idioma'), 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Aluguel;
 use Carbon\Carbon;
+use App\Http\Requests\StoreAluguel;
 use Illuminate\Http\Request;
 
 class AluguelController extends Controller
@@ -31,7 +32,7 @@ class AluguelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAluguel $request)
     {
          // Converter a data do aluguel para o formato Y-m-d
    
