@@ -63,7 +63,7 @@
     </div>
 
     <div class="p-4 sm:ml-80">
-        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+   <div class="tabela  p-4 border-2 border-gray-200 border-dashed rounded-lg mt-25">
             <div class="topo">
                 <h1>Alugueis!</h1>
                 <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">Adicionar</button>
@@ -97,28 +97,29 @@
             @endforeach
             @endif
 
-            @foreach($alugueis as $aluguel)
-            <div style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg mt-5">
-                <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <div class="p-5">
-                        <a href="#">
-                            <div class="itens_cartoes">
-                                <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{ $aluguel->nome }}</h5>
-                            </div>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">Locatário: {{ $aluguel->locatario }}</p>
-                        <p class="mb-3 font-normal text-gray-700">Data de Aluguel: {{ $aluguel->data_aluguel_formatada }}</p>
-                        <p class="mb-3 font-normal text-gray-700">Data de Devolução: {{ $aluguel->data_devolucao_formatada }}</p>
-                        <div class="botao_tab">
-                            <a href="{{ route('alugueis.edit', ['aluguel' => $aluguel->id]) }}"><button class="editar">Editar</button></a>
-                            <a href="{{ route('alugueis.show', ['aluguel' => $aluguel->id]) }}"><button class="deletar">Mostrar</button></a>
+           
+
+    <div class="  mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+     @foreach($alugueis as $aluguel)
+        <div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
+            <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-400">
+                <div class="p-5">
+                    <a href="#">
+                        <div class="itens_cartoes">
+                            <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{ $aluguel->nome }}</h5>
                         </div>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">ID:  {{$aluguel->id}}</p>
+                    <div class="botao_tab flex gap-2">
+                    <a href="{{ route('alugueis.edit', ['aluguel' => $aluguel->id]) }}"><button class="editar">Editar</button></a>
+                    <a href="{{ route('alugueis.show', ['aluguel' => $aluguel->id]) }}"><button style="background-color:#035353;" class="deletar">Mostrar</button></a>
                     </div>
                 </div>
             </div>
-            @endforeach
         </div>
-    </div>
+    @endforeach
+</div>
+
 
     <script>
         // Modal

@@ -82,6 +82,7 @@
          </li>
          <li>
             <a href="{{route('alugueis.index')}}" class="links_nav flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+            <img src="{{ asset('assets/images/troca.png') }}" alt="">
                <span class="flex-1 ms-3 whitespace-nowrap">Alugados</span>
             </a>
          </li>

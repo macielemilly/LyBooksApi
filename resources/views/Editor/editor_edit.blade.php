@@ -14,7 +14,7 @@
 
 
 <div class="py-40 px-100 sm:ml-80">
-   <div style="background-color:#FEEFEE; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg mt-14">
+   <div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg mt-14">
    @if($errors->any())
     @foreach($errors->all() as $error)
     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
