@@ -6,7 +6,7 @@ body{
 }
 
 .navs{
-  background-image: linear-gradient(to right, #013C3C, #024747, #035353  );
+  background-color: #035353;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.267);
 }
 

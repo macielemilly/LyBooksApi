@@ -11,9 +11,9 @@
     
 @extends('nav')
 
-<div class="p-4 sm:ml-80">
-   <div style="background-color:#F5F2E7; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<div class="px-100 py-35 sm:ml-80">
+   <div style="background-color:#F2542D; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg mt-14">
+    <div style="background-color:white;" class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
             <h3 class="text-xl font-semibold text-gray-900">
                 Editar Autor
@@ -36,6 +36,10 @@
                     </div>
                     <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Editar
                     </button>
+                    <a href="{{route('authors.index')}}">
+                    <button style="background-color:white; color:black;" type="button" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Voltar
+                    </button>
+                    </a>
                 </form>
         </div>
     </div>
