@@ -51,13 +51,13 @@ Route::get('/generos/{genero}/edit', [GeneroController::class,'edit'])->name('ge
 Route::put('/generos/{genero}', [GeneroController::class,'update'])->name('generos.update')->middleware(['auth', 'verified']);
 Route::delete('/generos/{genero}', [GeneroController::class,'destroy'])->name('generos.destroy')->middleware(['auth', 'verified']);
 
-Route::get('/authors', [AuthorController::class,'index'])->name('authors.index');
-Route::get('/authors/create', [AuthorController::class,'create'])->name('authors.create');
-Route::post('/authors', [AuthorController::class,'store'])->name('authors.store');
-Route::get('/authors{author}', [AuthorController::class,'show'])->name('authors.show');
-Route::get('/authors/{author}/edit', [AuthorController::class,'edit'])->name('authors.edit');
-Route::put('/authors/{author}', [AuthorController::class,'update'])->name('authors.update');
-Route::delete('/authors/{author}', [AuthorController::class,'destroy'])->name('authors.destroy');
+Route::get('/authors', [AuthorController::class,'index'])->name('authors.index')->middleware(['auth', 'verified']);
+Route::get('/authors/create', [AuthorController::class,'create'])->name('authors.create')->middleware(['auth', 'verified']);
+Route::post('/authors', [AuthorController::class,'store'])->name('authors.store')->middleware(['auth', 'verified']);
+Route::get('/authors{author}', [AuthorController::class,'show'])->name('authors.show')->middleware(['auth', 'verified']);
+Route::get('/authors/{author}/edit', [AuthorController::class,'edit'])->name('authors.edit')->middleware(['auth', 'verified']);
+Route::put('/authors/{author}', [AuthorController::class,'update'])->name('authors.update')->middleware(['auth', 'verified']);
+Route::delete('/authors/{author}', [AuthorController::class,'destroy'])->name('authors.destroy')->middleware(['auth', 'verified']);
 
 
 Route::get('/', function () {
