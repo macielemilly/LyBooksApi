@@ -22,7 +22,7 @@ class StoreAluguel extends FormRequest
     public function rules(): array
     {
         return [
-            'nome'=> 'required|min:3|max:50|unique:alugueis' ,'locatario' =>'required|min:3|max:50|unique:alugueis'
+            'nome'=> 'required|min:3|max:50|unique:alugueis' ,'locatario' =>'required|min:3|max:50|'
         ];
     }
 }
