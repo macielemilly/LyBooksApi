@@ -31,7 +31,7 @@
 @endif
 
 
-    <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);"" class="relative overflow-x-auto shadow-md sm:rounded-lg ">
+    <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="relative overflow-x-auto shadow-md sm:rounded-lg ">
         <div style="background-color:#013C3C;"class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
             <h3 style="color:white" class="text-xl font-semibold text-gray-900">
                 Editar Editora
