@@ -72,9 +72,19 @@
                     </select>
                 </div>
 
+                <div>
+                    <label for="editor_id" class="block mb-2 text-sm font-medium text-gray-900">Editora</label>
+                    <select name="editor_id" id="genero_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+                        <option value="">Selecione uma editora</option>
+                        @foreach($editoras as $editor)
+                            <option value="{{ $editor->id }}">{{ $editor->nome }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <!-- Botão -->
                 <div class="flex justify-end">
-                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">Salvar Livro</button>
+                <button style="background-color:#035353;"type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
                 </div>
                 @csrf
 
@@ -123,7 +133,11 @@
                             <div class="itens_cartoes">
                                 <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{$book->nome}}</h5>
                             </div>
-                            <p class="mb-3 font-normal text-gray-700">ID: {{$book->id}}</p>
+                            <p class="mb-3 font-normal text-gray-700">Autor: {{ $author->nome }}</p>
+                            <p class="mb-3 font-normal text-gray-700">Linguagem: {{ $language->idioma }}</p>
+                            <p class="mb-3 font-normal text-gray-700">Gênero: {{ $genero->nome }}</p>
+                            <p class="mb-3 font-normal text-gray-700">Editora: {{ $editor->nome }}</p>
+
                             <div class="botao_tab flex gap-2">
                                 <a href="{{ route('books.edit', ['book' => $book->id]) }}">
                                     <button class="editar">Editar</button>
