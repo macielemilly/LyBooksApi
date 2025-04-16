@@ -48,7 +48,7 @@
 
 
 <div class="px-25 py-15 sm:ml-80">
-<div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg">
+<div style="background-color:#013C3C;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg">
    <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mostrar m-2 p-4 rounded-lg ">
       
    <div>

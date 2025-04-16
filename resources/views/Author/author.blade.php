@@ -39,12 +39,13 @@
         @csrf
                 <div>
                     <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome Autor <span style="color:red;">*</span></label>
-                    <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="nome" value='{{old("nome")}}' required />
+                    <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="nome" value='{{old("nome")}}' />
                 </div>
 
                 <div>
                     <label for="Descrição" class="block mb-2 text-sm font-medium text-gray-900">Descrição <span style="color:red;">*</span></label>
-                    <input name="descricao" id="descricao" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="descricao" value='{{old("descricao")}}' required />
+                    <textarea style="height:100px"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
+                    type="text" id="descricao" name="descricao" placeholder="Descricao"></textarea>
                 </div>
                 <button style="background-color:#035353;"type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
             </form>
@@ -62,7 +63,7 @@
     </div>
 
     @if(session()->has('message'))
-            <div id="alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <div id="alert" class="my-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
 
   <span class="block sm:inline"> {{ session()->get('message') }}</span>
   <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -91,19 +92,25 @@
 @endif
 
    
-   
+<div class="mt-4">
+    @if($authors->isEmpty())
+        <div class="text-center text-gray-500 text-lg font-medium rounded p-4">
+            Nenhum Autor cadastrado ainda.
+        </div>
+    @else  
 <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @foreach($authors as $author)
-        <div style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg ">
             <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-400">
-                <div class="p-5">
+                <div class="">
                     <a href="#">
+                    <div style="background-color:#013C3C;" class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
                         <div class="itens_cartoes">
-                            <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{$author->nome}}</h5>
+                            <h5 style="color:white" class="mb-1 text-2xl tracking-tight text-gray-900">{{$author->nome}}</h5>
+                        </div>
                         </div>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700">ID: {{$author->id}}</p>
-                    <div class="botao_tab flex gap-2">
+                    <p class="px-3 pt-3 mb-3 font-normal text-gray-700">ID: {{$author->id}}</p>
+                    <div class="botao_tab mb-5 mr-5 flex gap-2">
                     <a href="{{ route('authors.edit', ['author' => $author->id]) }}">
                             <button style="background-color:green;" class="editar">Editar</button>
                         </a>
@@ -113,10 +120,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+
     @endforeach
 </div>
-
+@endif
+</div>
 
 
 <script>

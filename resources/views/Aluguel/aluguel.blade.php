@@ -38,22 +38,22 @@
                     @csrf
                     <div>
                         <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Livro <span style="color:red;">*</span></label>
-                        <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Nome do livro" value="{{ old('nome') }}" required />
+                        <input name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Nome do livro" value="{{ old('nome') }}"  />
                     </div>
 
                     <div>
                         <label for="locatario" class="block mb-2 text-sm font-medium text-gray-900">Locatário <span style="color:red;">*</span></label>
-                        <input name="locatario" id="locatario" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Nome do locatário" value="{{ old('locatario') }}" required />
+                        <input name="locatario" id="locatario" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Nome do locatário" value="{{ old('locatario') }}" />
                     </div>
 
                     <div>
                         <label for="data_aluguel" class="block mb-2 text-sm font-medium text-gray-900">Data de Aluguel <span style="color:red;">*</span></label>
-                        <input type="date" name="data_aluguel" id="data_aluguel" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('data_aluguel') }}" required />
+                        <input type="date" name="data_aluguel" id="data_aluguel" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('data_aluguel') }}" />
                     </div>
 
                     <div>
                         <label for="data_devolucao" class="block mb-2 text-sm font-medium text-gray-900">Data de Devolução <span style="color:red;">*</span></label>
-                        <input type="date" name="data_devolucao" id="data_devolucao" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('data_devolucao') }}" required />
+                        <input type="date" name="data_devolucao" id="data_devolucao" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ old('data_devolucao') }}" />
                     </div>
 
                     <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
@@ -70,7 +70,7 @@
             </div>
 
             @if(session()->has('message'))
-            <div id="alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <div id="alert" class="bg-green-100 border border-green-400 text-green-700 my-4 px-4 py-3 rounded relative" role="alert">
                 <span class="block sm:inline"> {{ session()->get('message') }}</span>
                 <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                     <svg id="close-alert" class="fill-current h-6 w-6 text-green-500 cursor-pointer" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -83,7 +83,7 @@
 
             @if($errors->any())
             @foreach($errors->all() as $error)
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4 mb-4" role="alert">
                 <strong class="font-bold">{{ $error }}</strong>
                 <span onclick="this.parentElement.remove()" class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer">
                     <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
@@ -99,27 +99,34 @@
 
            
 
+<div class="mt-4">
+    @if($alugueis->isEmpty())
+        <div class="text-center text-gray-500 text-lg font-medium rounded p-4">
+            Nenhum Aluguel feito ainda.
+        </div>
+    @else
     <div class="  mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
      @foreach($alugueis as $aluguel)
-        <div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg">
-            <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-400">
-                <div class="p-5">
+     <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-400">
+                <div class="">
                     <a href="#">
+                    <div style="background-color:#013C3C;" class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
                         <div class="itens_cartoes">
-                            <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{ $aluguel->nome }}</h5>
+                            <h5 style="color:white" class="mb-1 text-2xl tracking-tight text-gray-900">{{$aluguel->nome}}</h5>
+                        </div>
                         </div>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700">ID:  {{$aluguel->id}}</p>
-                    <div class="botao_tab flex gap-2">
+                    <p class="px-3 pt-3 mb-3 font-normal text-gray-700">ID: {{$aluguel->id}}</p>
+                    <div class="botao_tab mb-5 mr-5 flex gap-2">
                     <a href="{{ route('alugueis.edit', ['aluguel' => $aluguel->id]) }}"><button class="editar">Editar</button></a>
                     <a href="{{ route('alugueis.show', ['aluguel' => $aluguel->id]) }}"><button style="background-color:#035353;" class="deletar">Mostrar</button></a>
                     </div>
                 </div>
             </div>
-        </div>
     @endforeach
 </div>
-
+@endif
+</div>
 
     <script>
         // Modal

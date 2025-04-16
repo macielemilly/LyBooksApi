@@ -11,19 +11,17 @@
     
 @extends('nav')
 
-<div class="px-100 py-20 sm:ml-80">
-   <div style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4  rounded-lg mt-14">
-    <div style="background-color:white;"  class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
-            <h3 class="text-xl font-semibold text-gray-900">
+<div class="px-100 py-35 sm:ml-80">
+    <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);"  class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div style="background-color:#013C3C;" class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+            <h3 style="color:white"class="text-xl font-semibold text-gray-900">
                 Editar Aluguel
             </h3>
         </div>
 
-        <div class="p-4 md:p-5">
                     @if($errors->any())
                     @foreach($errors->all() as $error)
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <div class="bg-red-100 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
                         <strong class="font-bold">{{ $error }}</strong>
                         <span onclick="this.parentElement.remove()" class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer">
                             <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
@@ -41,23 +39,23 @@
         <form class="space-y-4" action="{{ route('alugueis.update', ['aluguel' => $aluguel->id]) }}" method="post">
                 @csrf
                 <div>
-                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Livro<span class="asterisco">*</span></label>
+                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Locatário<span style="color:red; margin-left:5px;">*</span></label>
                     <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            value="{{ $aluguel->nome }}" type="text" id="nome" name="nome" placeholder="Nome do Locatário"/>
                     <input type="hidden" name="_method" value="PUT">
                 </div>
                 <div>
-                    <label for="locatario" class="block mb-2 text-sm font-medium text-gray-900">Locatário<span class="asterisco">*</span></label>
+                    <label for="locatario" class="block mb-2 text-sm font-medium text-gray-900">Locatário<span style="color:red; margin-left:5px;">*</span></label>
                     <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            value="{{ $aluguel->locatario }}" type="text" id="locatario" name="locatario" placeholder="Nome do Locatário"/>
                 </div>
                 <div>
-                    <label for="data_aluguel" class="block mb-2 text-sm font-medium text-gray-900">Data do Aluguel<span class="asterisco">*</span></label>
+                    <label for="data_aluguel" class="block mb-2 text-sm font-medium text-gray-900">Data do Aluguel<span style="color:red; margin-left:5px;">*</span></label>
                     <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            value="{{ $aluguel->data_aluguel }}" type="date" id="data_aluguel" name="data_aluguel" placeholder="Data do Aluguel"/>
                 </div>
                 <div>
-                    <label for="data_devolucao" class="block mb-2 text-sm font-medium text-gray-900">Data de Devolução<span class="asterisco">*</span></label>
+                    <label for="data_devolucao" class="block mb-2 text-sm font-medium text-gray-900">Data de Devolução<span style="color:red; margin-left:5px;">*</span></label>
                     <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                            value="{{$aluguel->data_devolucao}}" type="date" id="data_devolucao" name="data_devolucao" placeholder="Data de Devolução"/>
                 </div>
@@ -70,6 +68,5 @@
         </div>
     </div>
    </div>
-</div>
 </body>
 </html>

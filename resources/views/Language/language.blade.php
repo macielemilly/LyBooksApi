@@ -41,7 +41,7 @@
                 <div>
 
                     <label for="idioma" class="block mb-2 text-sm font-medium text-gray-900">Linguagem <span style="color:red;">*</span></label>
-                    <input name="idioma" id="idioma" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Linguagem" value='{{old("idioma")}}' required />
+                    <input name="idioma" id="idioma" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Linguagem" value='{{old("idioma")}}' />
 
                 </div>
                 <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Criar</button>
@@ -62,7 +62,7 @@
     </div>
 
     @if(session()->has('message'))
-            <div id="alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <div id="alert" class="my-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
 
   <span class="block sm:inline"> {{ session()->get('message') }}</span>
   <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -76,7 +76,7 @@
 
 @if($errors->any())
     @foreach($errors->all() as $error)
-    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+    <div class="my-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
         <strong class="font-bold">{{ $error }}</strong>
         <span onclick="this.parentElement.remove()" class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer">
             <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
@@ -90,20 +90,25 @@
     @endforeach
 @endif
 
-
-
+<div class="mt-4">
+    @if($languages->isEmpty())
+        <div class="text-center text-gray-500 text-lg font-medium rounded p-4">
+            Nenhum Idioma cadastrado ainda.
+        </div>
+    @else
 <div class=" mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     @foreach($languages as $language)
-        <div style="background-color:#D09953; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="p-3 rounded-lg ">
-            <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-400">
-                <div class="p-5">
+    <div style="background-color:white;" class="cartao relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-400">
+                <div class="">
                     <a href="#">
+                    <div style="background-color:#013C3C;" class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
                         <div class="itens_cartoes">
-                            <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">{{$language->idioma}}</h5>
+                            <h5 style="color:white" class="mb-1 text-2xl tracking-tight text-gray-900">{{$language->idioma}}</h5>
+                        </div>
                         </div>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700">ID: {{$language->id}}</p>
-                    <div class="botao_tab flex gap-2">
+                    <p class="px-3 pt-3 mb-3 font-normal text-gray-700">ID: {{$language->id}}</p>
+                    <div class="botao_tab mb-5 mr-5 flex gap-2">
                     <a href="{{ route('languages.edit', ['language' => $language->id]) }}"><button style="background-color:green"class="editar" >Editar</button></a>
                     <form class="inline" action="{{ route('languages.destroy', ['language' => $language->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este idioma?');">
                                     @csrf
@@ -113,10 +118,10 @@
                     </div>
                 </div>
             </div>
-        </div>
     @endforeach
 </div>
-
+@endif
+</div>
 
 <script>
         //Modal

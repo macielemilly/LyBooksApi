@@ -47,13 +47,13 @@
         </div>
     </div>
 
-    <div class="px-25 py-15 sm:ml-80">
-        <div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg">
-            <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267); " class="mostrar m-2 p-4 rounded-lg ">
-
-                <div>
-                    <img src="{{ asset('assets/images/book.jpg') }}" alt="">
-                </div>
+<div class="px-25 py-15 sm:ml-80">
+<div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg">
+   <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267); " class="mostrar m-2 p-4 rounded-lg ">
+    
+   <div>
+   <img src="{{ asset('assets/images/book.jpg') }}" alt="">
+   </div>
 
                 <div class="infos_show">
                     <h1 class="text-4xl font-bold text-gray-900">{{$aluguel->nome}}</h1>

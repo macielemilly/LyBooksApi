@@ -13,19 +13,17 @@
 
     @extends('nav')
 
-    <div class="px-100 py-35 sm:ml-80">
-        <div style="background-color:#D09953;  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="mt-20 p-4 rounded-lg mt-14">
-            <div style="background-color:white;" class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
-                    <h3 class="text-xl font-semibold text-gray-900">
-                        Editar Autor
-                    </h3>
-                </div>
+<div class="px-100 py-40 sm:ml-80">
+    <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div style="background-color:#013C3C;" class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+            <h3 style="color:white"class="text-xl font-semibold text-gray-900">
+                Editar Autor
+            </h3>
+        </div>
 
-                <div class="p-4 md:p-5">
-                    @if($errors->any())
+        @if($errors->any())
                     @foreach($errors->all() as $error)
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <div class="bg-red-100 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
                         <strong class="font-bold">{{ $error }}</strong>
                         <span onclick="this.parentElement.remove()" class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer">
                             <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
@@ -38,29 +36,29 @@
                     </div>
                     @endforeach
                     @endif
-                <!-- Modal body -->
-                    <form class="space-y-4" action="{{ route('authors.update', ['author' => $authors->id])}}" method='post'>
-                        @csrf
-                        <div>
-                            <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Autor<span class="asterisco">*</span></label>
-                            <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                value="{{$authors->nome}}" type="text" id="nome" name="nome" placeholder="Nome" />
-                            <input type="hidden" name="_method" value="PUT">
-                        </div>
-                        <div>
-                            <label for="Descrição" class="block mb-2 text-sm font-medium text-gray-900">Descrição<span class="asterisco">*</span></label>
-                            <textarea style="height:100px" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                type="text" id="descricao" name="descricao" placeholder="Descricao">{{$authors->descricao}}</textarea>
-                        </div>
-                        <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Editar
-                        </button>
-                        <a href="{{route('authors.index')}}">
-                            <button style="background-color:white; color:black;" type="button" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Voltar
-                            </button>
-                        </a>
-                    </form>
-                </div>
-            </div>
+        <!-- Modal body -->
+        <div class="p-4 md:p-5">
+        <form class="space-y-4" action="{{ route('authors.update', ['author' => $authors->id])}}" method='post'>
+                @csrf
+                    <div>
+                        <label for="nome" class="block mb-2 text-sm font-medium text-gray-900">Nome do Autor<span class="asterisco">*</span></label>
+                        <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
+                          value="{{$authors->nome}}" type="text" id="nome" name="nome" placeholder="Nome"/>
+                          <input type="hidden" name="_method" value="PUT">
+                    </div>
+                    <div>
+                    <label for="Descrição" class="block mb-2 text-sm font-medium text-gray-900">Descrição<span class="asterisco">*</span></label>
+                          <textarea style="height:100px"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
+                           type="text" id="descricao" name="descricao" placeholder="Descricao">{{$authors->descricao}}</textarea>
+                    </div>
+                    <button style="background-color:#035353;" type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Editar
+                    </button>
+                    <a href="{{route('authors.index')}}">
+                    <button style="background-color:white; color:black;" type="button" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" id="criar">Voltar
+                    </button>
+                    </a>
+                </form>
         </div>
     </div>
+   </div>
 </body>
