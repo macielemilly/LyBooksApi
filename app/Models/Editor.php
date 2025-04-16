@@ -9,4 +9,9 @@ class Editor extends Model
     protected $fillable = [
         'nome',
     ];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class); 
+    }
 }

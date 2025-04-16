@@ -27,4 +27,8 @@ class Book extends Model
     {
         return $this->belongsTo(genero::class); 
     }
+    public function language()
+    {
+        return $this->belongsTo(language::class); 
+    }
 }

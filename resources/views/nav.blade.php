@@ -50,7 +50,7 @@
             </a>
          </li>
          <li>
-            <a href="{{route('dashboard')}}" class="links_nav flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 group">
+            <a href="{{route('books.index')}}" class="links_nav flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 group">
             <img src="{{ asset('assets/images/nav_livro.png') }}" alt="">
                <span class="flex-1 ms-3 whitespace-nowrap">Livros</span>
                <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full ">3</span>

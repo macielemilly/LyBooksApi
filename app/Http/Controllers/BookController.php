@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Author;
+use App\Models\Editor;
+use App\Models\Language;
+use App\Models\Genero;
 use App\Models\Book; 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreBook;
@@ -15,17 +18,28 @@ class BookController extends Controller
     }
 
     public function index()
-    {
-        $books = $this->book->all();
-        return view('Book/book', ['books' => $books]);
-    }
+{
+    return view('Book/book', [
+        'books' => Book::all(),
+        'authors' => Author::all(),
+        'editoras' => Editor::all(),
+        'languages' => Language::all(), // ou 'languages' se preferir
+        'generos' => Genero::all(),
+    ]);
+}
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('Book/book_create');
+        return view('book.create', [
+            'authors' => Author::all(), // Pega todos os autores
+            'editoras' => Editor::all(), // Pega todas as editoras
+            'languages' => Language::all(), // Pega todas as linguagens
+            'generos' => Genero::all(), // Pega todos os gêneros
+        ]);
     }
 
     /**

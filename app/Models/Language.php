@@ -8,5 +8,10 @@ class Language extends Model
 {
     //{
     protected $fillable = ['idioma', ];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class); 
+    }
 }
 
