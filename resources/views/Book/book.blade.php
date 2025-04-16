@@ -52,8 +52,8 @@
 
                 <!-- Linguagem -->
                 <div>
-                    <label for="linguagem_id" class="block mb-2 text-sm font-medium text-gray-900">Linguagem</label>
-                    <select name="linguagem_id" id="linguagem_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+                    <label for="language_id" class="block mb-2 text-sm font-medium text-gray-900">Linguagem</label>
+                    <select name="language_id" id="language_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
                         <option value="">Selecione uma linguagem</option>
                         @foreach($languages as $language)
                             <option value="{{ $language->id }}">{{ $language->idioma }}</option>
@@ -74,7 +74,7 @@
 
                 <div>
                     <label for="editor_id" class="block mb-2 text-sm font-medium text-gray-900">Editora</label>
-                    <select name="editor_id" id="genero_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+                    <select name="editor_id" id="editor_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
                         <option value="">Selecione uma editora</option>
                         @foreach($editoras as $editor)
                             <option value="{{ $editor->id }}">{{ $editor->nome }}</option>
