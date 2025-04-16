@@ -14,9 +14,18 @@
 
 
 <div class="py-60 px-100 sm:ml-80">
-   @if($errors->any())
+
+
+    <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="relative overflow-x-auto shadow-md sm:rounded-lg ">
+        <div style="background-color:#013C3C;"class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+            <h3 style="color:white" class="text-xl font-semibold text-gray-900">
+                Editar Editora
+            </h3>
+        </div>
+
+        @if($errors->any())
     @foreach($errors->all() as $error)
-    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+    <div class="bg-red-100 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
         <strong class="font-bold">{{ $error }}</strong>
         <span onclick="this.parentElement.remove()" class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer">
             <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
@@ -29,14 +38,6 @@
     </div>
     @endforeach
 @endif
-
-
-    <div style="background-color:white; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.267);" class="relative overflow-x-auto shadow-md sm:rounded-lg ">
-        <div style="background-color:#013C3C;"class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
-            <h3 style="color:white" class="text-xl font-semibold text-gray-900">
-                Editar Editora
-            </h3>
-        </div>
         <!-- Modal body -->
         <div class="p-4 md:p-5">
         <form class="space-y-4" action="{{ route('editoras.update', ['editor' => $editoras->id])}}" method='post'>
