@@ -5,26 +5,16 @@ use App\Http\Requests\StoreGenero;
 use App\Models\Genero;
 use Illuminate\Http\Request;
 
+
 class GeneroController extends Controller
 {
-    public readonly Genero $genero;
-
-    public function __construct(){
-        $this->genero = new Genero();
-    }
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $generos = $this->genero->all();
-        return view('Gêneros/genero', ['generos' => $generos]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $generos = Genero::all();  // Usando o método 'all' diretamente no modelo
+        return response()->json($generos);
     }
 
     /**
@@ -32,15 +22,21 @@ class GeneroController extends Controller
      */
     public function store(StoreGenero $request)
     {
-        $created = $this->genero->create([
-            'nome' => $request->input('nome'), 
+        // Criação do gênero diretamente usando o modelo Genero
+        $created = Genero::create([
+            'nome' => $request->input('nome'),
         ]);
 
-        if($created){
-           return redirect()->route('generos.index')->with('message', 'Gênero "' . $created->nome  . '" criado com sucesso');
+        if ($created) {
+            return response()->json([
+                'message' => 'Gênero "' . $created->nome . '" criado com sucesso',
+                'genero' => $created,
+            ], 201); // HTTP Status 201 Created
         }
 
-        return redirect()->route('generos.index')->with('message','Erro ao criar');
+        return response()->json([
+            'message' => 'Erro ao criar o gênero',
+        ], 500); // HTTP Status 500 Internal Server Error
     }
 
     /**
@@ -48,15 +44,7 @@ class GeneroController extends Controller
      */
     public function show(Genero $genero)
     {
-        return view('Gêneros/genero_show',['generos' => $genero]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Genero $genero)
-    {
-        return view('Gêneros/genero_edit', ['generos' => $genero]);
+        return response()->json($genero);
     }
 
     /**
@@ -64,13 +52,18 @@ class GeneroController extends Controller
      */
     public function update(StoreGenero $request, string $id)
     {
-        $updated = Genero::where('id', $id)->update($request->except(['_token','_method']));
+        // Atualiza o gênero usando o id fornecido
+        $updated = Genero::where('id', $id)->update($request->except(['_token', '_method']));
 
-        if($updated){
-            return redirect()->route('generos.index')->with('message','Atualizado com sucesso');
+        if ($updated) {
+            return response()->json([
+                'message' => 'Gênero atualizado com sucesso',
+            ]);
         }
 
-        return redirect()->route('generos.index')->with('message','Erro ao atualizar');
+        return response()->json([
+            'message' => 'Erro ao atualizar o gênero',
+        ], 500); // HTTP Status 500 Internal Server Error
     }
 
     /**
@@ -78,8 +71,19 @@ class GeneroController extends Controller
      */
     public function destroy(string $id)
     {
-        $this->genero->where('id',$id)->delete();
+        // Deleta o gênero especificado
+        $deleted = Genero::where('id', $id)->delete();
 
-        return redirect()->route('generos.index')->with('message','Deletado com sucesso');
+        if ($deleted) {
+            return response()->json([
+                'message' => 'Gênero deletado com sucesso',
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Erro ao deletar o gênero',
+        ], 500); // HTTP Status 500 Internal Server Error
     }
 }
+
+
