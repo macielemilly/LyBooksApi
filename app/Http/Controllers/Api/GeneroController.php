@@ -14,7 +14,7 @@ class GeneroController extends Controller
     public function index()
     {
         $generos = Genero::all();  // Usando o método 'all' diretamente no modelo
-        return response()->json($generos);
+        return response()->json(['generos' => $generos]);
     }
 
     /**

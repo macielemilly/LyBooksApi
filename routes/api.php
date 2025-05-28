@@ -41,13 +41,13 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 // Rotas para Gêneros
-Route::middleware(['auth:sanctum'])->group(function () {
+
     Route::get('/generos', [GeneroController::class,'index'])->name('generos.index');
     Route::post('/generos', [GeneroController::class,'store'])->name('generos.store');
     Route::get('/generos/{genero}', [GeneroController::class,'show'])->name('generos.show');
     Route::put('/generos/{genero}', [GeneroController::class,'update'])->name('generos.update');
     Route::delete('/generos/{genero}', [GeneroController::class,'destroy'])->name('generos.destroy');
-});
+
 
 // Rotas para Autores
 Route::middleware(['auth:sanctum'])->group(function () {
