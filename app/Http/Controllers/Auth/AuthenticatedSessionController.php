@@ -3,45 +3,51 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
-    /**
-     * Display the login view.
-     */
-    public function create(): View
+    public function store(Request $request)
     {
-        return view('auth.login');
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+
+            $user = Auth::user();
+            
+             $token = $request->user()->createToken($user->email . '_Token')->plainTextToken;
+
+            
+
+            return response()->json([
+                'token' => $token
+            ]);
+        }
+
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+   public function destroy(Request $request)
+{
+    $user = $request->user();
+
+    // Apaga todos os tokens do usuário - logout de todas as sessões
+    // $user->tokens()->delete();
+
+    // Ou apaga somente o token atual, mas antes valida se existe e se não é transitório
+    $token = $request->user()->currentAccessToken();
+
+    if ($token && method_exists($token, 'delete')) {
+        $token->delete();
+    } else {
+        // Apaga todos tokens se o token atual não pode ser deletado (fallback)
+        $user->tokens()->delete();
     }
 
-    /**
-     * Handle an incoming authentication request.
-     */
-    public function store(LoginRequest $request): RedirectResponse
-    {
-        $request->authenticate();
-
-        $request->session()->regenerate();
-
-        return redirect()->intended(route('dashboard', absolute: false));
-    }
-
-    /**
-     * Destroy an authenticated session.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        Auth::guard('web')->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect('/');
-    }
+    return response()->json(['message' => 'Logged out successfully']);
 }
+
+}
+
+
+
