@@ -17,7 +17,7 @@ use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 
-// Rotas públicas (sem autenticação)
+
 Route::prefix('auth')->group(function () {
     Route::middleware('guest')->group(function () {
         Route::post('register', [RegisteredUserController::class, 'store']);
@@ -26,7 +26,7 @@ Route::prefix('auth')->group(function () {
         Route::post('reset-password', [NewPasswordController::class, 'store']);
     });
 
-    // Rotas protegidas por autenticação (token)
+    
     Route::middleware('auth:sanctum')->group(function () {
         Route::get('verify-email', EmailVerificationPromptController::class)
             ->name('verification.notice');
@@ -42,7 +42,7 @@ Route::prefix('auth')->group(function () {
     });
 });
 
-// Rotas protegidas por autenticação (auth:sanctum) - CRUD de entidades
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::resources([
         'alugueis' => AluguelController::class,
@@ -53,7 +53,7 @@ Route::middleware('auth:sanctum')->group(function () {
     ]);
 });
 
-// Rotas abertas (sem autenticação) - Gêneros
+
 Route::resource('generos', GeneroController::class)->only([
     'index', 'store', 'show', 'update', 'destroy'
 ]);

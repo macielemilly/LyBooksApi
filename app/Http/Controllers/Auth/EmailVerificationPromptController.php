@@ -2,20 +2,28 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
+use Illuminate\Http\JsonResponse;
 
-class EmailVerificationPromptController extends Controller
+class ApiEmailVerificationPromptController
 {
     /**
-     * Display the email verification prompt.
+     * Handle the incoming request.
+     *
+     * Retorna status do email do usuário (verificado ou não).
      */
-    public function __invoke(Request $request): RedirectResponse|View
+    public function __invoke(Request $request): JsonResponse
     {
-        return $request->user()->hasVerifiedEmail()
-                    ? redirect()->intended(route('dashboard', absolute: false))
-                    : view('auth.verify-email');
+        if ($request->user()->hasVerifiedEmail()) {
+            return response()->json([
+                'message' => 'Email já verificado.',
+                'verified' => true,
+            ], 200);
+        }
+
+        return response()->json([
+            'message' => 'Verificação de email pendente.',
+            'verified' => false,
+        ], 200);
     }
 }
