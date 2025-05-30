@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
-class ApiEmailVerificationPromptController
+class EmailVerificationPromptController
 {
     /**
      * Handle the incoming request.

@@ -18,6 +18,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 
 
+
 Route::prefix('auth')->group(function () {
     Route::middleware('guest')->group(function () {
         Route::post('register', [RegisteredUserController::class, 'store']);
@@ -28,11 +29,11 @@ Route::prefix('auth')->group(function () {
 
     
     Route::middleware('auth:sanctum')->group(function () {
-        Route::get('verify-email', EmailVerificationPromptController::class)
-            ->name('verification.notice');
-        Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
-            ->middleware(['signed', 'throttle:6,1'])
-            ->name('verification.verify');
+       Route::get('verify-email',EmailVerificationPromptController::class)
+    ->name('verification.notice');
+       Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
+    ->middleware(['signed', 'throttle:6,1'])
+    ->name('verification.verify');
         Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
             ->middleware('throttle:6,1')
             ->name('verification.send');

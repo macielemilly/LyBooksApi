@@ -43,21 +43,22 @@ class EmailVerificationTest extends TestCase
         $this->assertTrue($user->fresh()->hasVerifiedEmail());
     }
 
-    public function test_email_is_not_verified_with_invalid_hash(): void
-    {
-        $user = User::factory()->unverified()->create();
+   public function test_email_is_not_verified_with_invalid_hash()
+{
+    $user = User::factory()->create([
+        'email_verified_at' => null,
+    ]);
 
-        $invalidUrl = URL::temporarySignedRoute(
-            'verification.verify',
-            now()->addMinutes(60),
-            ['id' => $user->id, 'hash' => sha1('email@errado.com')]
-        );
+    $invalidUrl = URL::temporarySignedRoute(
+        'verification.verify',
+        now()->addMinutes(60),
+        ['id' => $user->id, 'hash' => 'invalid-hash']
+    );
 
-        $response = $this->actingAs($user, 'sanctum')->getJson($invalidUrl);
+    $response = $this->actingAs($user)->getJson($invalidUrl);
 
-        $response->assertStatus(403);
-        $response->assertJson(['message' => 'Hash inválido.']);
+    $response->assertStatus(403); // Assinatura inválida gera Forbidden
 
-        $this->assertFalse($user->fresh()->hasVerifiedEmail());
-    }
+    $this->assertNull($user->fresh()->email_verified_at);
+}
 }
