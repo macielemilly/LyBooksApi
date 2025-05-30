@@ -28,8 +28,6 @@ class ConfirmablePasswordController extends Controller
             ]);
         }
 
-        
-       
 
         return response()->json([
             'message' => 'Senha confirmada com sucesso.'
