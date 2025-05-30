@@ -4,6 +4,7 @@ namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class PasswordConfirmationTest extends TestCase
@@ -13,10 +14,12 @@ class PasswordConfirmationTest extends TestCase
     public function test_password_can_be_confirmed(): void
     {
         $user = User::factory()->create([
-            'password' => bcrypt('password'), // garante senha correta
+            'password' => bcrypt('password'),
         ]);
 
-        $response = $this->actingAs($user)->postJson('/auth/confirm-password', [
+        Sanctum::actingAs($user);
+
+        $response = $this->postJson('/api/auth/confirm-password', [
             'password' => 'password',
         ]);
 
@@ -32,7 +35,9 @@ class PasswordConfirmationTest extends TestCase
             'password' => bcrypt('password'),
         ]);
 
-        $response = $this->actingAs($user)->postJson('/auth/confirm-password', [
+        Sanctum::actingAs($user);
+
+        $response = $this->postJson('/api/auth/confirm-password', [
             'password' => 'wrong-password',
         ]);
 
@@ -40,3 +45,4 @@ class PasswordConfirmationTest extends TestCase
         $response->assertJsonValidationErrors('password');
     }
 }
+

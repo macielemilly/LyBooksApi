@@ -27,13 +27,13 @@ Route::prefix('auth')->group(function () {
         Route::post('reset-password', [NewPasswordController::class, 'store']);
     });
 
-    
+
     Route::middleware('auth:sanctum')->group(function () {
-       Route::get('verify-email',EmailVerificationPromptController::class)
-    ->name('verification.notice');
-       Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
-    ->middleware(['signed', 'throttle:6,1'])
-    ->name('verification.verify');
+        Route::get('verify-email', EmailVerificationPromptController::class)
+            ->name('verification.notice');
+        Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
+            ->middleware(['signed', 'throttle:6,1'])
+            ->name('verification.verify');
         Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
             ->middleware('throttle:6,1')
             ->name('verification.send');
@@ -56,10 +56,12 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 Route::resource('generos', GeneroController::class)->only([
-    'index', 'store', 'show', 'update', 'destroy'
+    'index',
+    'store',
+    'show',
+    'update',
+    'destroy'
 ]);
 
 // Rota principal da API
 Route::get('/', fn() => response()->json(['message' => 'Welcome to the API!']));
-
-
