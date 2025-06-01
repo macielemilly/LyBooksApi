@@ -19,6 +19,7 @@ use App\Http\Controllers\BookController;
 
 
 
+
 Route::prefix('auth')->group(function () {
     Route::middleware('guest')->group(function () {
         Route::post('register', [RegisteredUserController::class, 'store']);
@@ -40,6 +41,7 @@ Route::prefix('auth')->group(function () {
         Route::post('confirm-password', [ConfirmablePasswordController::class, 'store'])->name('password.confirm');
         Route::put('password', [PasswordController::class, 'update'])->name('password.update');
         Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+         Route::put('auth/password', [\App\Http\Controllers\Auth\PasswordController::class, 'update']);
     });
 });
 
