@@ -87,7 +87,7 @@ class PasswordResetTest extends TestCase
           
             $response = $this->postJson('/api/auth/reset-password', [
                 'token' => $notification->token,
-                'email' => $user->email,  // Usando o email do usuário
+                'email' => $user->email,  
                 'password' => 'new-password123',
                 'password_confirmation' => 'new-password123',
             ]);

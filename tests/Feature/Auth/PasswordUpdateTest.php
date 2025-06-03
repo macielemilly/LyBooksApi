@@ -14,11 +14,11 @@ class PasswordUpdateTest extends TestCase
     public function test_password_can_be_updated(): void
 {/** @var \App\Models\User $user */
     $user = User::factory()->create([
-        'password' => bcrypt('password'), // garantir senha correta
+        'password' => bcrypt('password'), 
     ]);
 
     $response = $this
-        ->actingAs($user, 'sanctum')  // usar guard sanctum para API
+        ->actingAs($user, 'sanctum')  
         ->putJson('/api/auth/password', [
             'current_password' => 'password',
             'password' => 'new-password',
@@ -37,7 +37,7 @@ class PasswordUpdateTest extends TestCase
 public function test_correct_password_must_be_provided_to_update_password(): void
 {/** @var \App\Models\User $user */
     $user = User::factory()->create([
-        'password' => bcrypt('password'), // garantir senha correta
+        'password' => bcrypt('password'), 
     ]);
 
     $response = $this
@@ -49,7 +49,7 @@ public function test_correct_password_must_be_provided_to_update_password(): voi
         ]);
 
     $response
-        ->assertStatus(422) // erro de validação geralmente retorna 422
+        ->assertStatus(422) 
         ->assertJsonValidationErrors('current_password');
 }
 

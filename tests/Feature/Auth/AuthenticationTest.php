@@ -12,21 +12,21 @@ class AuthenticationTest extends TestCase
 
     public function test_users_can_authenticate_using_the_api()
     {
-        // Criar um usuário para teste
+        
         $user = User::factory()->create([
             'password' => bcrypt($password = 'password123'),
         ]);
 
-        // Fazer login via API no endpoint correto (api/auth/login)
+        
         $response = $this->postJson('/api/auth/login', [
             'email' => $user->email,
             'password' => $password,
         ]);
 
         $response->assertStatus(200);
-        $response->assertJsonStructure(['token']); // ou conforme sua resposta
+        $response->assertJsonStructure(['token']); 
 
-        // Você pode salvar o token para usar em outras requisições, se quiser
+        
         $token = $response->json('token');
     }
 
@@ -41,7 +41,7 @@ class AuthenticationTest extends TestCase
             'password' => 'wrong-password',
         ]);
 
-        // O status esperado para credenciais erradas é 401 Unauthorized
+        
         $response->assertStatus(401);
     }
 
@@ -49,15 +49,15 @@ class AuthenticationTest extends TestCase
     {
         $user = User::factory()->create();
 
-        // Fazer login para obter token
+       
         $loginResponse = $this->postJson('/api/auth/login', [
             'email' => $user->email,
-            'password' => 'password', // Ajuste se usar outra senha no factory
+            'password' => 'password', 
         ]);
 
         $token = $loginResponse->json('token');
 
-        // Fazer logout autenticado usando Bearer token
+        
         $response = $this->withHeader('Authorization', 'Bearer ' . $token)
                          ->postJson('/api/auth/logout');
 

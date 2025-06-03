@@ -44,7 +44,7 @@ class EmailVerificationTest extends TestCase
     }
 
    public function test_email_is_not_verified_with_invalid_hash()
-{
+{/** @var \App\Models\User $user */
     $user = User::factory()->create([
         'email_verified_at' => null,
     ]);
@@ -57,7 +57,7 @@ class EmailVerificationTest extends TestCase
 
     $response = $this->actingAs($user)->getJson($invalidUrl);
 
-    $response->assertStatus(403); // Assinatura inválida gera Forbidden
+    $response->assertStatus(403); 
 
     $this->assertNull($user->fresh()->email_verified_at);
 }

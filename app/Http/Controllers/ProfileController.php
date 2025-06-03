@@ -3,58 +3,55 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
-
-class ProfileController extends Controller
-{
+use Illuminate\Http\JsonResponse; {
     /**
-     * Display the user's profile form.
+     * Mostrar dados do perfil do usuário.
      */
-    public function edit(Request $request): View
-    {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
-    }
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    class ProfileController extends Controller
     {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        public function edit(Request $request): JsonResponse
+        {
+            return response()->json($request->user());
         }
 
-        $request->user()->save();
+        public function update(ProfileUpdateRequest $request): JsonResponse
+        {
+            $user = $request->user();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
+            $user->fill($request->validated());
 
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
+            if ($user->isDirty('email')) {
+                $user->email_verified_at = null;
+            }
 
-        $user = $request->user();
+            $user->save();
 
-        Auth::logout();
+            return response()->json([
+                'message' => 'Perfil atualizado com sucesso.',
+                'user' => $user,
+            ]);
+        }
 
-        $user->delete();
+        public function destroy(Request $request): JsonResponse
+        {
+            $request->validate([
+                'password' => ['required', 'current_password'],
+            ]);
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+            $user = $request->user();
 
-        return Redirect::to('/');
+
+            $user->tokens()->delete();
+            $user->delete();
+
+           
+
+            return response()->json([
+                'message' => 'Conta deletada com sucesso.',
+            ]);
+        }
     }
 }
