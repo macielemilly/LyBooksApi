@@ -15,10 +15,10 @@ class AuthenticatedSessionController extends Controller
         if (Auth::attempt($credentials)) {
 
             $user = Auth::user();
-            
-             $token = $request->user()->createToken($user->email . '_Token')->plainTextToken;
 
-            
+            $token = $request->user()->createToken($user->email . '_Token')->plainTextToken;
+
+
 
             return response()->json([
                 'token' => $token
@@ -27,24 +27,20 @@ class AuthenticatedSessionController extends Controller
 
         return response()->json(['error' => 'Unauthorized'], 401);
     }
-   public function destroy(Request $request)
-{
-    $user = $request->user();
+    public function destroy(Request $request)
+    {
+        $user = $request->user();
 
-  
-    $token = $request->user()->currentAccessToken();
 
-    if ($token && method_exists($token, 'delete')) {
-        $token->delete();
-    } else {
-       
-        $user->tokens()->delete();
+        $token = $request->user()->currentAccessToken();
+
+        if ($token && method_exists($token, 'delete')) {
+            $token->delete();
+        } else {
+
+            $user->tokens()->delete();
+        }
+
+        return response()->json(['message' => 'Logged out successfully']);
     }
-
-    return response()->json(['message' => 'Logged out successfully']);
 }
-
-}
-
-
-
