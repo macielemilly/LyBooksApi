@@ -31,16 +31,13 @@ class AuthenticatedSessionController extends Controller
 {
     $user = $request->user();
 
-    // Apaga todos os tokens do usuário - logout de todas as sessões
-    // $user->tokens()->delete();
-
-    // Ou apaga somente o token atual, mas antes valida se existe e se não é transitório
+  
     $token = $request->user()->currentAccessToken();
 
     if ($token && method_exists($token, 'delete')) {
         $token->delete();
     } else {
-        // Apaga todos tokens se o token atual não pode ser deletado (fallback)
+       
         $user->tokens()->delete();
     }
 

@@ -6,23 +6,24 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreGenero extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'nome' => 'required|min:3|max:50|unique:generos', 
+            'nome' => 'required|string|unique:generos,nome',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'nome.unique' => 'Esse nome de gênero já está em uso.',
+            'nome.required' => 'O campo nome é obrigatório.',
         ];
     }
 }
+

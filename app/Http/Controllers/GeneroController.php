@@ -1,57 +1,54 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\StoreGenero;
 use App\Models\Genero;
 use Illuminate\Http\Request;
 
-
 class GeneroController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $generos = Genero::all();  // Usando o método 'all' diretamente no modelo
+        $generos = Genero::all();
         return response()->json($generos);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreGenero $request)
     {
-        
+        $nome = $request->input('nome');
+
+        // Verifica se já existe um gênero com esse nome
+        $existe = Genero::where('nome', $nome)->exists();
+        if ($existe) {
+            return response()->json([
+                'message' => 'Não deu certo criar o gênero: já existe um com esse nome.',
+            ], 409);
+        }
+
         $created = Genero::create([
-            'nome' => $request->input('nome'),
+            'nome' => $nome,
         ]);
 
         if ($created) {
             return response()->json([
                 'message' => 'Gênero "' . $created->nome . '" criado com sucesso',
                 'genero' => $created,
-            ], 201); // HTTP Status 201 Created
+            ], 201);
         }
+
         return response()->json([
             'message' => 'Erro ao criar o gênero',
-        ], 500); // HTTP Status 500 Internal Server Error
+        ], 500);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Genero $genero)
     {
         return response()->json($genero);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(StoreGenero $request, string $id)
     {
-      
         $updated = Genero::where('id', $id)->update($request->except(['_token', '_method']));
 
         if ($updated) {
@@ -62,15 +59,11 @@ class GeneroController extends Controller
 
         return response()->json([
             'message' => 'Erro ao atualizar o gênero',
-        ], 500); // HTTP Status 500 Internal Server Error
+        ], 500);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        
         $deleted = Genero::where('id', $id)->delete();
 
         if ($deleted) {
@@ -81,8 +74,7 @@ class GeneroController extends Controller
 
         return response()->json([
             'message' => 'Erro ao deletar o gênero',
-        ], 500); // HTTP Status 500 Internal Server Error
+        ], 500);
     }
+    
 }
-
-
