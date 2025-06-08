@@ -17,10 +17,9 @@ class GeneroFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
-       return [
-    'genero' => fake()->company,
-];
-
-    }
+{
+    return [
+        'nome' => fake()->unique()->word,
+    ];
+}
 }

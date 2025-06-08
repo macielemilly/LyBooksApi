@@ -60,6 +60,7 @@ Route::middleware('auth:sanctum')->group(function () {
         'languages' => LanguageController::class,
         'authors' => AuthorController::class,
         'books' => BookController::class,
+        //'generos' => GeneroController::class,
 
     ]);
 });
