@@ -10,15 +10,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->id(); // Chave primária
+            $table->id(); 
             $table->string('nome');
-
-            // Foreign keys com CASCADE
-            $table->foreignId('author_id')->constrained('authors')->onDelete('cascade');
-            $table->foreignId('language_id')->constrained('languages')->onDelete('cascade');
             $table->foreignId('genero_id')->constrained('generos')->onDelete('cascade');
-            $table->foreignId('editor_id')->constrained('editors')->onDelete('cascade');
-
             $table->timestamps();
         });
     }

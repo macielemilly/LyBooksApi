@@ -23,11 +23,8 @@ class StoreBook extends FormRequest
     {
         return [
             'nome' => 'required|min:3|max:50',
-
-            'author_id' => 'required|exists:authors,id',
-            'language_id' => 'required|exists:languages,id',
             'genero_id' => 'required|exists:generos,id',
-            'editor_id' => 'required|exists:editors,id',
+            
         ];
     }
 }

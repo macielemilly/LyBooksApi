@@ -60,19 +60,19 @@ Route::middleware('auth:sanctum')->group(function () {
         'languages' => LanguageController::class,
         'authors' => AuthorController::class,
         'books' => BookController::class,
-        //'generos' => GeneroController::class,
+        'generos' => GeneroController::class,
 
     ]);
 });
 
 
-Route::resource('generos', GeneroController::class)->only([
+/*Route::resource('generos', GeneroController::class)->only([
     'index',
     'store',
     'show',
     'update',
     'destroy'
-]);
+]);*/
 
 // Rota principal da API
 Route::get('/', fn() => response()->json(['message' => 'Welcome to the API!']));
