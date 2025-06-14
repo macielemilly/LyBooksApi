@@ -19,3 +19,4 @@ class Book extends Model
 
         return $this->belongsTo(Genero::class);
     }
+}
