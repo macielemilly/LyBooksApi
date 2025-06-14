@@ -58,7 +58,7 @@ Route::middleware('auth:sanctum')->group(function () {
         'alugueis' => AluguelController::class,
         'editoras' => EditorController::class,
         'languages' => LanguageController::class,
-        'authors' => AuthorController::class,
+        //'authors' => AuthorController::class,
         'books' => BookController::class,
         //'generos' => GeneroController::class,
 
