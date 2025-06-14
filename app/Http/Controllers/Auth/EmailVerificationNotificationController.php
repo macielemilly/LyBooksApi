@@ -18,14 +18,14 @@ class EmailVerificationNotificationController extends Controller
         if ($user->hasVerifiedEmail()) {
             return response()->json([
                 'message' => 'Email já verificado.'
-            ], 400); // Bad Request, pois o usuário já tem email verificado
+            ], 400); 
         }
 
         $user->sendEmailVerificationNotification();
 
         return response()->json([
             'message' => 'Link de verificação enviado com sucesso.'
-        ], 202); // Accepted - Pedido aceito para processamento
+        ], 202); 
     }
 }
 

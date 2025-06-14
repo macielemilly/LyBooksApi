@@ -10,7 +10,7 @@ class EmailVerificationPromptController
     /**
      * Handle the incoming request.
      *
-     * Retorna status do email do usuário (verificado ou não).
+     * 
      */
     public function __invoke(Request $request): JsonResponse
     {

@@ -41,7 +41,7 @@ class RegisteredUserController extends Controller
         'password' => Hash::make($request->password),
     ]);
 
-    // Gera o token com Sanctum
+    
     $token = $user->createToken($user->email . '_Token')->plainTextToken;
 
     return response()->json([

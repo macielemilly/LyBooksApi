@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
             ]);
         }
 
-        return response()->json(['error' => 'Unauthorized'], 401);
+        return response()->json(['error' => 'Não autorizado'], 401);
     }
     public function destroy(Request $request)
     {
@@ -41,6 +41,6 @@ class AuthenticatedSessionController extends Controller
             $user->tokens()->delete();
         }
 
-        return response()->json(['message' => 'Logged out successfully']);
+        return response()->json(['message' => 'Deslogado com sucesso']);
     }
 }

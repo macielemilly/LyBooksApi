@@ -29,11 +29,11 @@ Route::prefix('auth')->group(function () {
         Route::post('reset-password', [NewPasswordController::class, 'store']);
     });
 
- Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit']);
-    Route::patch('/profile', [ProfileController::class, 'update']);
-    Route::delete('/profile', [ProfileController::class, 'destroy']);
-});
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::get('/profile', [ProfileController::class, 'edit']);
+        Route::patch('/profile', [ProfileController::class, 'update']);
+        Route::delete('/profile', [ProfileController::class, 'destroy']);
+    });
 
 
     Route::middleware('auth:sanctum')->group(function () {
@@ -73,6 +73,8 @@ Route::resource('generos', GeneroController::class)->only([
     'update',
     'destroy'
 ]);
+
+
 
 // Rota principal da API
 Route::get('/', fn() => response()->json(['message' => 'Welcome to the API!']));

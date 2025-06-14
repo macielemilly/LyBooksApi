@@ -1,86 +1,73 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Author; 
 use Illuminate\Http\Request;
-use App\Http\requests\StoreAuthorRequest;
+use App\Http\Requests\StoreAuthorRequest;
 
 class AuthorController extends Controller
 {
-    public readonly Author $author;
-
-    public function __construct(){
-        $this->author = new Author();
-    }
-
     public function index()
     {
-
-        $authors = $this->author->all();
-        return view('Author/author', ['authors' => $authors]);
+        $authors = Author::all();
+        return response()->json($authors, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreAuthorRequest $request)
     {
-        $created = $this->author->create([
-            'nome' => $request->input('nome'), 
+        $author = Author::create([
+            'nome' => $request->input('nome'),
             'descricao' => $request->input('descricao'),
         ]);
 
-        if($created){
-           return redirect()->route('authors.index')->with('message', 'Author "' . $created->nome  . '" criado com sucesso');
+        if ($author) {
+            return response()->json([
+                'message' => 'Autor criado com sucesso',
+                'author' => $author
+            ], 201);
         }
 
-        return redirect()->route('authors.index')->with('message','Erro ao criar');
+        return response()->json(['message' => 'Erro ao criar autor'], 500);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Author $author)
+    public function show(string $id)
     {
-        return view('Author/author_show',['authors' => $author]);
+        $author = Author::find($id);
+
+        if (!$author) {
+            return response()->json(['message' => 'Autor não encontrado'], 404);
+        }
+
+        return response()->json($author, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Author $author)
-    {
-        return view('Author/author_edit', ['authors' => $author]);
-    }
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(StoreAuthorRequest $request, string $id)
     {
-        $updated = Author::where('id', $id)->update($request->except(['_token','_method']));
+        $author = Author::find($id);
 
-        if($updated){
-            return redirect()->route('authors.index')->with('message','Atualizado com sucesso');
+        if (!$author) {
+            return response()->json(['message' => 'Autor não encontrado'], 404);
         }
 
-        return redirect()->route('authors.index')->with('message','Erro ao atualizar');
+        $author->update($request->only(['nome', 'descricao']));
+
+        return response()->json([
+            'message' => 'Autor atualizado com sucesso',
+            'author' => $author
+        ], 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        $this->author->where('id',$id)->delete();
+        $author = Author::find($id);
 
-       return redirect()->route('authors.index')->with('message','Deletado com sucesso');
+        if (!$author) {
+            return response()->json(['message' => 'Autor não encontrado'], 404);
+        }
+
+        $author->delete();
+
+        return response()->json(['message' => 'Autor deletado com sucesso'], 200);
     }
 }
