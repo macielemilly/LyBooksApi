@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Author;
-use App\Models\Editor;
-use App\Models\Language;
+
 use App\Models\Genero;
 use App\Models\Book;
 use Illuminate\Http\Request;
@@ -12,103 +10,64 @@ use App\Http\Requests\StoreBook;
 
 class BookController extends Controller
 {
-    public readonly Book $book;
-
-    public function __construct()
-    {
-        $this->book = new Book();
-    }
-
     public function index()
     {
-        return view('Book/book', [
-            'books' => Book::all(),
-            'authors' => Author::all(),
-            'editoras' => Editor::all(),
-            'languages' => Language::all(), // ou 'languages' se preferir
-            'generos' => Genero::all(),
-        ]);
+        // Retorna todos os livros com os relacionamentos
+        $books = Book::with(['genero'])->get();
+
+        return response()->json($books);
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('book.create', [
-            'authors' => Author::all(),
-            'editoras' => Editor::all(),
-            'languages' => Language::all(),
-            'generos' => Genero::all(),
-        ]);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreBook $request)
     {
-        $created = $this->book->create([
-            'nome' => $request->input('nome'),
-            'author_id' => $request->input('author_id'),  // Novo campo
-            'editor_id' => $request->input('editor_id'),  // Novo campo
-            'genero_id' => $request->input('genero_id'),  // Novo campo
-            'language_id' => $request->input('language_id'),  // Novo campo
-        ]);
+        $data = $request->validated();
+
+        $created = Book::create($data);
 
         if ($created) {
-            return redirect()->route('books.index')->with('message', 'Livro "' . $created->nome  . '" criado com sucesso');
+            return response()->json([
+                'message' => 'Livro criado com sucesso',
+                'book' => $created
+            ], 201);
         }
 
-        return redirect()->route('books.index')->with('message', 'Erro ao criar');
+        return response()->json(['message' => 'Erro ao criar o livro'], 500);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Book $book)
     {
-        return view('Book/book_show', ['books' => $book]);
+        // Retorna o livro com seus relacionamentos
+        $book->load(['genero']);
+        
+        return response()->json($book);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Book $book)
+    public function update(StoreBook $request, Book $book)
     {
+        $data = $request->validated();
 
-
-        return view('Book.book_edit', [
-            'book' => $book,
-            'authors' => Author::all(),
-            'languages' => Language::all(),
-            'generos' => Genero::all(),
-            'editoras' => Editor::all(),
-        ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(StoreBook $request, string $id)
-    {
-        $updated = Book::where('id', $id)->update($request->except(['_token', '_method']));
+        $updated = $book->update($data);
 
         if ($updated) {
-            return redirect()->route('books.index')->with('message', 'Atualizado com sucesso');
+            return response()->json([
+                'message' => 'Livro atualizado com sucesso',
+                'book' => $book->fresh()
+            ]);
         }
 
-        return redirect()->route('books.index')->with('message', 'Erro ao atualizar');
+        return response()->json(['message' => 'Erro ao atualizar o livro'], 500);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(Book $book)
     {
-        $this->book->where('id', $id)->delete();
+        $deleted = $book->delete();
 
-        return redirect()->route('books.index')->with('message', 'Deletado com sucesso');
+        if ($deleted) {
+            return response()->json(['message' => 'Livro deletado com sucesso']);
+        }
+
+        return response()->json(['message' => 'Erro ao deletar o livro'], 500);
     }
 }
+
+

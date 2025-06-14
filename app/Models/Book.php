@@ -16,6 +16,6 @@ class Book extends Model
 
     public function genero()
     {
+
         return $this->belongsTo(Genero::class);
     }
-}
