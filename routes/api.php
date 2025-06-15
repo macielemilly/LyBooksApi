@@ -58,29 +58,14 @@ Route::middleware('auth:sanctum')->group(function () {
         'alugueis' => AluguelController::class,
         'editoras' => EditorController::class,
         'languages' => LanguageController::class,
-        //'authors' => AuthorController::class,
+        'authors' => AuthorController::class,
         'books' => BookController::class,
-        //'generos' => GeneroController::class,
+        'generos' => GeneroController::class,
 
     ]);
 });
 
 
-Route::resource('generos', GeneroController::class)->only([
-    'index',
-    'store',
-    'show',
-    'update',
-    'destroy'
-]);
-
-Route::resource('authors', AuthorController::class)->only([
-    'index',
-    'store',
-    'show',
-    'update',
-    'destroy'
-]);
 
 // Rota principal da API
 Route::get('/', fn() => response()->json(['message' => 'Welcome to the API!']));
