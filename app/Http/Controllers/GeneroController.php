@@ -18,7 +18,7 @@ class GeneroController extends Controller
     {
         $nome = $request->input('nome');
 
-        // Verifica se já existe um gênero com esse nome
+        
         $existe = Genero::where('nome', $nome)->exists();
         if ($existe) {
             return response()->json([
