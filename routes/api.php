@@ -67,5 +67,5 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 
-// Rota principal da API
+
 Route::get('/', fn() => response()->json(['message' => 'Welcome to the API!']));
